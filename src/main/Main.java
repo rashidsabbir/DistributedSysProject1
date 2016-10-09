@@ -24,11 +24,15 @@ public class Main {
 		if(result.substring(0,6).equalsIgnoreCase("create"))
 			testFile = CreateFile(result.substring(7,result.length()));
 		else if(result.substring(0,6).equalsIgnoreCase("delete"))
-			System.out.println("Deleting File...");
+			DeleteFile(result.substring(7,result.length()));
 		else if(result.substring(0,4).equalsIgnoreCase("read"))
 			ReadFile(testFile);
 		else if(result.substring(0,6).equalsIgnoreCase("append"))
-			Append(testFile, result.substring(7,result.length()));
+		{
+			String tmp = result.substring(7,result.length());
+			int index = tmp.indexOf(' ');
+			Append(result.substring(7,index),result.substring(index+1,tmp.length()));
+		}
 		else
 			System.out.println("Error: Invalid Command");
 	}
