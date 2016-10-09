@@ -59,4 +59,8 @@ public class Main {
 		}
 	}
 
+	public static void DeleteFile( String inputFile) throws IOException {
+		Runtime.getRuntime().exec(new String[]{"bash","-c","rm " + inputFile});
+	}
+
 }
