@@ -20,14 +20,15 @@ public class Main {
 		
 		String result = console.nextLine();
 		//Note: Calling create, delete, read, and append go here:
+		File testFile = null;
 		if(result.substring(0,6).equalsIgnoreCase("create"))
-			System.out.println("Creating File...");
+			testFile = CreateFile(result.substring(7,result.length()));
 		else if(result.substring(0,6).equalsIgnoreCase("delete"))
 			System.out.println("Deleting File...");
 		else if(result.substring(0,4).equalsIgnoreCase("read"))
-			System.out.println("Reading File...");
+			ReadFile(testFile);
 		else if(result.substring(0,6).equalsIgnoreCase("append"))
-			System.out.println("Appending to File...");
+			Append(testFile, result.substring(7,result.length()));
 		else
 			System.out.println("Error: Invalid Command");
 	}
