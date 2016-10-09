@@ -40,27 +40,28 @@ public class Main {
 		return file;
 	}
 
-	public static void Append( File inputFile, String line) throws IOException {
+	public static void AppendFile( String fileName, String line) throws IOException {
 
-		BufferedWriter writer = new BufferedWriter(new FileWriter(inputFile.getAbsoluteFile()));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
 		writer.append(line);
 		writer.flush();
 		writer.close();
 		
 	}
 	
-	public static void ReadFile( File inputFile) throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+	public static void ReadFile( String fileName) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		String input = reader.readLine();
 		while(input!=null)
 		{
 			System.out.println(input);
 			input=reader.readLine();
 		}
+		reader.close();
 	}
 
-	public static void DeleteFile( String inputFile) throws IOException {
-		Runtime.getRuntime().exec(new String[]{"bash","-c","rm " + inputFile});
+	public static void DeleteFile( String fileName) throws IOException {
+		Runtime.getRuntime().exec(new String[]{"bash","-c","rm " + fileName});
 	}
 
 }
