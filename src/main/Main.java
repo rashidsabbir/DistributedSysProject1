@@ -22,16 +22,26 @@ public class Main {
 		//Note: Calling create, delete, read, and append go here:
 		File testFile = null;
 		if(result.substring(0,6).equalsIgnoreCase("create"))
+		{
+			System.out.println("Creating File...");
 			testFile = CreateFile(result.substring(7,result.length()));
+		}
 		else if(result.substring(0,6).equalsIgnoreCase("delete"))
+		{
+			System.out.println("Deleting File...");
 			DeleteFile(result.substring(7,result.length()));
+		}
 		else if(result.substring(0,4).equalsIgnoreCase("read"))
-			ReadFile(testFile);
+		{
+			System.out.println("Reading File...");
+			ReadFile(result.substring(5,result.length()));
+		}
 		else if(result.substring(0,6).equalsIgnoreCase("append"))
 		{
+			System.out.println("Appending to File...");
 			String tmp = result.substring(7,result.length());
 			int index = tmp.indexOf(' ');
-			Append(result.substring(7,index),result.substring(index+1,tmp.length()));
+			AppendFile(tmp.substring(0,index),tmp.substring(index+1,tmp.length()));
 		}
 		else
 			System.out.println("Error: Invalid Command");
