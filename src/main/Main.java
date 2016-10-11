@@ -6,11 +6,51 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
+import raymonds.Process;
 
 public class Main {
 
 	public static void main(String[] args) throws IOException {
+		FileReader fr = new FileReader("tree.txt");
+		BufferedReader br = new BufferedReader(fr);
+		String input = br.readLine();
+		boolean first = true;
+		ArrayList<Process> processes = new ArrayList<Process>();
+		while(input!=null)
+		{
+			if(first)
+			{
+				processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+				processes.add(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+				first = false;
+			}
+			else
+			{
+				boolean found=false;
+				for(int i=0;i<processes.size();i++)
+				{
+					if(input.substring(1,2).equals(processes.get(i).getProcessID()))
+						found=true;
+					
+					if(!found)
+						processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+				}
+				
+				for(int i=0;i<processes.size();i++)
+				{
+					if(input.substring(3,4).equals(processes.get(i).getProcessID()))
+						found=true;
+					
+					if(!found)
+						processes.add(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+				}
+			}
+			
+		}
+		
+		
 		Scanner console = new Scanner(System.in);
 		System.out.println("Select the following command that you want to execute:");
 		System.out.println("1: create <filename>: creates an empty file named <filename>");
