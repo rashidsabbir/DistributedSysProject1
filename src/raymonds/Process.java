@@ -1,9 +1,28 @@
 package raymonds;
 
+import java.util.LinkedList;
+
 public class Process {
 
-	private String processID;
+	public Process (String processID, HolderEnum holderEnum, boolean usingResource, boolean asked) {
+		this.processID = processID;
+		this.holderEnum = holderEnum;
+		this.usingResource = usingResource;
+		this.asked = asked;
+		this.requestQueue = new LinkedList<Process>();
+		this.processState = Process.ProcessState.NEW ;
+	}
 	
+	private String processID;
+	public enum HolderEnum {
+		Self,
+		Neighbor;
+	}
+	public HolderEnum holderEnum;
+	
+	public boolean usingResource = false;
+	public boolean asked = false;
+
 	private ProcessState processState;
 	public enum ProcessState {
 		NEW,
@@ -12,6 +31,8 @@ public class Process {
 		RUNNING,
 		FINISHED;
 	}
+	
+	public LinkedList<Process> requestQueue = new LinkedList<Process>(); 
 
 	public Process(String processID ) {
 		super();
