@@ -1,23 +1,19 @@
 package raymonds;
 
-import java.util.LinkedList;
-
-
 public class Raymonds {
 	
 	public Process holderProc;
 	
 	public void assignToken(Process p) {
 		if ( (p.holderEnum == Process.HolderEnum.Self) && (!p.usingResource) && (!p.requestQueue.isEmpty()) ) {
-			//holderProc = p.requestQueue.pop() ;
-			p.requestQueue.pop().holderEnum = Process.HolderEnum.Self ;
-			/*
-			if (p.getProcessID() == holderProc.getProcessID()) {
+			holderProc = p.requestQueue.pop() ;
+			
+			if (p.getProcessID() == holderProc.getProcessID()) { //i.e. the process p is at the front of its own queue
 				p.holderEnum = Process.HolderEnum.Self;
 			} else {
 				p.holderEnum = Process.HolderEnum.Neighbor;
+				holderProc.holderEnum = Process.HolderEnum.Self ;
 			}
-			*/
 			
 			p.asked = false;
 			
