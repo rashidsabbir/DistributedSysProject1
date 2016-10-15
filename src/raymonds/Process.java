@@ -22,7 +22,7 @@ public class Process {
 	
 	public boolean usingResource = false;
 	public boolean asked = false;
-	public ArrayList<Process> neighbors;
+	public ArrayList<Process> neighbors = new ArrayList<Process>();
 
 	private ProcessState processState;
 	public enum ProcessState {
@@ -68,6 +68,14 @@ public class Process {
 	 */
 	public void addNeighbor(Process p)	{
 		this.neighbors.add(p);
+	}
+	
+	/**
+	 * @return ArrayList of all the neighbors
+	 */
+	public ArrayList<Process> getNeighbors()
+	{
+		return this.neighbors;
 	}
 	
     

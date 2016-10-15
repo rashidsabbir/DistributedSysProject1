@@ -30,28 +30,64 @@ public class Main {
 			}
 			else
 			{
+				int index = 0;
 				boolean found=false;
 				for(int i=0;i<processes.size();i++)
 				{
 					if(input.substring(1,2).equals(processes.get(i).getProcessID()))
+					{
 						found=true;
+						index=i;
+					}
 					
 				}
 				if(!found)
+				{
 					processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+					processes.get(processes.size()-1).addNeighbor(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+				}
+				else
+				{
+					if(!processes.get(index).getNeighbors().contains(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false)))
+					{
+						processes.get(index).addNeighbor(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+						System.out.println("CONTAINS 1");
+					}
+				}
 				found=false;
+				index = 0;
 				for(int i=0;i<processes.size();i++)
 				{
 					if(input.substring(3,4).equals(processes.get(i).getProcessID()))
+					{
 						found=true;
+						index=i;
+					}
 				}
 				if(!found)
+				{
 					processes.add(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+					processes.get(processes.size()-1).addNeighbor(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+				}
+				else
+				{
+					if(!processes.get(index).getNeighbors().contains(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false)))
+					{
+						processes.get(index).addNeighbor(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+						System.out.println("CONTAINS 2");
+					}
+				}
 			}
 			input=br.readLine();
 		}
 		for(int i=0;i<processes.size();i++)
+		{
 			System.out.println(processes.get(i).getProcessID());
+			System.out.print("Neighbors: ");
+			for(int j=0;j<processes.get(i).getNeighbors().size();j++)
+				System.out.print(processes.get(i).getNeighbors().get(j).getProcessID()+" ");
+			System.out.println();
+		}
 		
 		Scanner console = new Scanner(System.in);
 		System.out.println("Select the following command that you want to execute:");
