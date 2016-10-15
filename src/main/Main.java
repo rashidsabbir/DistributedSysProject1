@@ -23,7 +23,9 @@ public class Main {
 			if(first)
 			{
 				processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+				processes.get(0).addNeighbor(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
 				processes.add(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+				processes.get(1).addNeighbor(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
 				first = false;
 			}
 			else
@@ -34,21 +36,22 @@ public class Main {
 					if(input.substring(1,2).equals(processes.get(i).getProcessID()))
 						found=true;
 					
-					if(!found)
-						processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
 				}
-				
+				if(!found)
+					processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+				found=false;
 				for(int i=0;i<processes.size();i++)
 				{
 					if(input.substring(3,4).equals(processes.get(i).getProcessID()))
 						found=true;
-					
-					if(!found)
-						processes.add(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
 				}
+				if(!found)
+					processes.add(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
 			}
-			
+			input=br.readLine();
 		}
+		for(int i=0;i<processes.size();i++)
+			System.out.println(processes.get(i).getProcessID());
 		
 		Scanner console = new Scanner(System.in);
 		System.out.println("Select the following command that you want to execute:");

@@ -1,7 +1,7 @@
 package raymonds;
 
 import java.util.LinkedList;
-
+import java.util.ArrayList;
 public class Process {
 
 	public Process (String processID, HolderEnum holderEnum, boolean usingResource, boolean asked) {
@@ -22,6 +22,7 @@ public class Process {
 	
 	public boolean usingResource = false;
 	public boolean asked = false;
+	public ArrayList<Process> neighbors;
 
 	private ProcessState processState;
 	public enum ProcessState {
@@ -60,6 +61,13 @@ public class Process {
 	 */
 	public void setProcessState(ProcessState processState) {
 		this.processState = processState;
+	}
+	
+	/**
+	 * @param Process that is being added to the neighbor array
+	 */
+	public void addNeighbor(Process p)	{
+		this.neighbors.add(p);
 	}
 	
     
