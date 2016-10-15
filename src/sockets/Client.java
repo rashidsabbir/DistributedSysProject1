@@ -36,6 +36,7 @@ public class Client {
                 out.println(userInput);
                 System.out.println("echo: " + in.readLine());
             }
+            System.out.println("CLIENT: Exited while loop.");
             echoSocket.close();
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);

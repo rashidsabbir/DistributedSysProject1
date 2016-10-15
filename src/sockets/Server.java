@@ -26,13 +26,14 @@ public class Server {
             BufferedReader in = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
 //            System.out.println("SERVER: Created buffered reader.");
-            
-//            System.out.println("SERVER: About to print line.");
             ){
+            System.out.println("SERVER: In try. About to print line to out.");
             String inputLine;
+            System.out.println("SERVER: In try. About to enter while loop.");
             while ((inputLine = in.readLine()) != null) {
                 out.println(inputLine);
             }
+            System.out.println("SERVER: In try. Exited while loop.");
             serverSocket.close();
         } catch (IOException e) {
             System.out.println("Exception caught when trying to listen on port "
