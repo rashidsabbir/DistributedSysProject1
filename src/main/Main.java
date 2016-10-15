@@ -50,7 +50,6 @@ public class Main {
 			
 		}
 		
-		
 		Scanner console = new Scanner(System.in);
 		System.out.println("Select the following command that you want to execute:");
 		System.out.println("1: create <filename>: creates an empty file named <filename>");
@@ -85,6 +84,9 @@ public class Main {
 		}
 		else
 			System.out.println("Error: Invalid Command");
+		
+		br.close();
+		console.close();
 	}
 	
 	public static File CreateFile( String fileName) throws IOException {
