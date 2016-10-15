@@ -12,8 +12,9 @@ public class Server {
         }
         
         int portNumber = Integer.parseInt(args[0]);
-        
-        try (
+    	System.out.println("SERVER: About to try to create a server socket.");
+        try {
+       		System.out.println("SERVER: Creating server socket.");
             ServerSocket serverSocket =
                 new ServerSocket(Integer.parseInt(args[0]));
             Socket clientSocket = serverSocket.accept();     
@@ -21,11 +22,14 @@ public class Server {
                 new PrintWriter(clientSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
-        ) {
+            
+            System.out.println("SERVER: About to print line.");
+         
             String inputLine;
             while ((inputLine = in.readLine()) != null) {
                 out.println(inputLine);
             }
+            serverSocket.close();
         } catch (IOException e) {
             System.out.println("Exception caught when trying to listen on port "
                 + portNumber + " or listening for a connection");
