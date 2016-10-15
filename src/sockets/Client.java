@@ -14,22 +14,23 @@ public class Client {
  
         String hostName = args[0];
         int portNumber = Integer.parseInt(args[1]);
-        System.out.println("About to try to create Client Socket");
-        try {
+        System.out.println("CLIENT: About to try to create Client Socket");
+        try (
             Socket echoSocket = new Socket(hostName, portNumber);
-        	System.out.println("CLIENT: Created Client Socket");
+//        	System.out.println("CLIENT: Created Client Socket");
         	PrintWriter out =
                 new PrintWriter(echoSocket.getOutputStream(), true);
-        	System.out.println("CLIENT: Initiated print writer output stream.");
+//        	System.out.println("CLIENT: Initiated print writer output stream.");
         	BufferedReader in =
                 new BufferedReader(
                     new InputStreamReader(echoSocket.getInputStream()));
-        	System.out.println("CLIENT: Initiated print buffered reader input stream.");
+//        	System.out.println("CLIENT: Initiated print buffered reader input stream.");
             BufferedReader stdIn =
                 new BufferedReader(
                     new InputStreamReader(System.in));
-        	System.out.println("CLIENT: Initiated print buffered reader stdIn.");
-            String userInput;
+//        	System.out.println("CLIENT: Initiated print buffered reader stdIn.");
+        	){
+        	String userInput;
         	System.out.println("CLIENT: About to wait for user input.");
             while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
