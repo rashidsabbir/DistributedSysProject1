@@ -49,6 +49,8 @@ public class Client {
                     	System.out.println("CLIENT: In inner while loop.");
                     	System.out.println(ans);
 //                    	ans=in.readLine();
+                    	if(ans==null)
+                    		break;
                     }
     			}
     		}
