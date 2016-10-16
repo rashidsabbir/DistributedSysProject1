@@ -144,15 +144,17 @@ public class Main {
 		
 	}
 	
-	public static void ReadFile( String fileName) throws IOException {
+	public static String ReadFile( String fileName) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		String input = reader.readLine();
+		String result = "";
 		while(input!=null)
 		{
-			System.out.println(input);
+			result = result + input + "\n";
 			input=reader.readLine();
 		}
 		reader.close();
+		return result;
 	}
 
 	public static void DeleteFile( String fileName) throws IOException {
