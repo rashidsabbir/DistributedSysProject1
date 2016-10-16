@@ -9,4 +9,7 @@
 \BOOKMARK [3][-]{subsubsection.3.1.4}{releaseResource\(Process p\)}{subsection.3.1}% 9
 \BOOKMARK [3][-]{subsubsection.3.1.5}{receivedRequestFromNeighbor\(Process p, Process neighbor\)}{subsection.3.1}% 10
 \BOOKMARK [3][-]{subsubsection.3.1.6}{receivedToken\(Process p\)}{subsection.3.1}% 11
-\BOOKMARK [1][-]{section.4}{Conclusions}{}% 12
+\BOOKMARK [2][-]{subsection.3.2}{Client Code}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Multithreaded Server Code}{section.3}% 13
+\BOOKMARK [1][-]{section.4}{Main - Read, Write, Append, Delete}{}% 14
+\BOOKMARK [1][-]{section.5}{Conclusions}{}% 15

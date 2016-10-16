@@ -2,11 +2,14 @@
 \contentsline {section}{\numberline {II}Introduction}{2}{section.2}
 \contentsline {subsection}{\numberline {II.I}Problem Statement}{2}{subsection.2.1}
 \contentsline {section}{\numberline {III}Methodology}{2}{section.3}
-\contentsline {subsection}{\numberline {III.I}Raymond's Functions}{2}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {III.I.i}assignToken(Process p)}{2}{subsubsection.3.1.1}
+\contentsline {subsection}{\numberline {III.I}Raymond's Functions}{3}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {III.I.i}assignToken(Process p)}{3}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {III.I.ii}sendRequest(Process p)}{3}{subsubsection.3.1.2}
 \contentsline {subsubsection}{\numberline {III.I.iii}requestResource(Process p)}{3}{subsubsection.3.1.3}
-\contentsline {subsubsection}{\numberline {III.I.iv}releaseResource(Process p)}{3}{subsubsection.3.1.4}
-\contentsline {subsubsection}{\numberline {III.I.v}receivedRequestFromNeighbor(Process p, Process neighbor)}{3}{subsubsection.3.1.5}
-\contentsline {subsubsection}{\numberline {III.I.vi}receivedToken(Process p)}{3}{subsubsection.3.1.6}
-\contentsline {section}{\numberline {IV}Conclusions}{3}{section.4}
+\contentsline {subsubsection}{\numberline {III.I.iv}releaseResource(Process p)}{4}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {III.I.v}receivedRequestFromNeighbor(Process p, Process neighbor)}{4}{subsubsection.3.1.5}
+\contentsline {subsubsection}{\numberline {III.I.vi}receivedToken(Process p)}{4}{subsubsection.3.1.6}
+\contentsline {subsection}{\numberline {III.II}Client Code}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {III.III}Multithreaded Server Code}{5}{subsection.3.3}
+\contentsline {section}{\numberline {IV}Main - Read, Write, Append, Delete}{8}{section.4}
+\contentsline {section}{\numberline {V}Conclusions}{11}{section.5}

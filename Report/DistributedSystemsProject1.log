@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.17)  16 OCT 2016 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.9.17)  16 OCT 2016 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -545,7 +545,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 181.
 
 
@@ -554,50 +554,49 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 181.
- [2]
-Overfull \hbox (9.20879pt too wide) in paragraph at lines 230--230
-|\OT1/cmr/bx/n/10 III.I.v re-ceive-dRequest-From-Neigh-bor(Process
- []
+ [3]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 261.
 
 
+(/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 261.
+ [4] [5] [6] [7]
+[8] [9] [10] 
 AED: lastpage setting LastPage
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
+[11]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
  (./DistributedSystemsProject1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
-
-
-Package rerunfilecheck Warning: File `DistributedSystemsProject1.out' has chang
-ed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `DistributedSystemsProject1.out':
-(rerunfilecheck)             Before: 571451491038BAA5863A73502E2AC9E0;775
-(rerunfilecheck)             After:  AC728509DF3789732C906730914F7636;861.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 557.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 557.
+Package rerunfilecheck Info: File `DistributedSystemsProject1.out' has not chan
+ged.
+(rerunfilecheck)             Checksum: 2BBE0C4C9ECE481303E0B0D4A2ACD116;1067.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 557.
  ) 
 Here is how much of TeX's memory you used:
- 9333 strings out of 493029
- 133300 string characters out of 6136234
- 682675 words of memory out of 5000000
- 12667 multiletter control sequences out of 15000+600000
+ 9885 strings out of 493029
+ 140982 string characters out of 6136234
+ 494675 words of memory out of 5000000
+ 12908 multiletter control sequences out of 15000+600000
  12744 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 32i,11n,54p,258b,1929s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,12n,59p,258b,1678s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on DistributedSystemsProject1.pdf (3 pages, 98975 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb>
+Output written on DistributedSystemsProject1.pdf (11 pages, 133114 bytes).
 PDF statistics:
- 175 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
- 69 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 603 PDF objects out of 1000 (max. 8388607)
+ 576 compressed objects within 6 object streams
+ 377 named destinations out of 1000 (max. 500000)
+ 121 words of extra memory for PDF output out of 10000 (max. 10000000)
 
