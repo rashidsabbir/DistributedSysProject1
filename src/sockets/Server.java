@@ -34,7 +34,7 @@ public class Server {
             String inputLine;
             System.out.println("SERVER: In try. About to enter while loop.");
 
-            out.println("Select the following command that you want to execute:");
+     /*       out.println("Select the following command that you want to execute:");
             out.flush();
     		out.println("1: create <filename>: creates an empty file named <filename>");
     		out.flush();
@@ -43,7 +43,7 @@ public class Server {
     		out.println("3: read <filename>: displays the contents of <filename>");
     		out.flush();
     		out.println("4: append <filename> <line>: appends a <line> to <filename>");
-            
+       */     
             while ((inputLine = in.readLine()) != null) {
             	
         		//String result = console.nextLine();
