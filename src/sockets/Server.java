@@ -73,18 +73,6 @@ public class Server {
         		
         		console.close();
             	
-            	
-            	        	
-            	
-            	
-            	
-            	
-            	
-            	
-            	
-            	
-            	
-                out.println(inputLine);
             }
             System.out.println("SERVER: In try. Exited while loop.");
             serverSocket.close();
