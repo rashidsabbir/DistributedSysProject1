@@ -40,7 +40,12 @@ public class Client {
     		System.out.println("4: append <filename> <line>: appends a <line> to <filename>");
             while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
-                System.out.println("SERVER: " + in.readLine());
+            	String ans = in.readLine();
+                while(in!=null)
+                {
+                	System.out.println("SERVER: " + ans);
+                	ans=in.readLine();
+                };
             }
             System.out.println("CLIENT: Exited while loop.");
             echoSocket.close();
