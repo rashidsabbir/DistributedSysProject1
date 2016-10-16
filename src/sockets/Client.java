@@ -47,27 +47,14 @@ public class Client {
                     while((ans=in.readLine()) != null)
                     {
                     	System.out.println("CLIENT: In inner while loop.");
-                    	System.out.println(ans);
+                    	System.out.println(ans + ans.length());
 //                    	ans=in.readLine();
                     	if(ans=="\n")
                     		break;
                     }
+                    System.out.println("CLIENT: Exited inner while loop.");
     			}
     		}
-    		
-    		
-    		/* while ((userInput = stdIn.readLine()) != null) {
-                out.println(userInput);
-            	String ans = "";
-                while((ans=in.readLine()) != null)
-                {
-                	System.out.println("CLIENT: In inner while loop.");
-                	System.out.println(ans);
-//                	ans=in.readLine();
-                }
-                System.out.println("CLIENT: Exited inner while loop.");
-            }
-            */
             System.out.println("CLIENT: Exited while loop.");
             echoSocket.close();
         } catch (UnknownHostException e) {
