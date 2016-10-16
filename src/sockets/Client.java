@@ -38,7 +38,13 @@ public class Client {
     		System.out.println("2: delete <filename>: deletes file named <filename>");
     		System.out.println("3: read <filename>: displays the contents of <filename>");
     		System.out.println("4: append <filename> <line>: appends a <line> to <filename>");
-            while ((userInput = stdIn.readLine()) != null) {
+            
+    		while ((userInput = stdIn.readLine()) != null) {
+    			out.println(userInput);
+    		}
+    		
+    		
+    		/* while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
             	String ans = "";
                 while((ans=in.readLine()) != null)
@@ -49,6 +55,7 @@ public class Client {
                 }
                 System.out.println("CLIENT: Exited inner while loop.");
             }
+            */
             System.out.println("CLIENT: Exited while loop.");
             echoSocket.close();
         } catch (UnknownHostException e) {
