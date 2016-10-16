@@ -150,8 +150,8 @@ public class Main {
 		String result = input;
 		while(input!=null)
 		{
-			result = result + "\n"+ input;
 			input=reader.readLine();
+			result = result + "\n"+ input;
 		}
 		reader.close();
 		return result;

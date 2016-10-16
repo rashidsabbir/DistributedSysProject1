@@ -29,8 +29,6 @@ public class Server {
                 new InputStreamReader(clientSocket.getInputStream()));
             System.out.println("SERVER: Created buffered reader.");
             
-            System.out.println("SERVER: In try. About to print line to out.");
-            String inputLine;
             System.out.println("SERVER: In try. About to enter while loop.");
 
      /*       out.println("Select the following command that you want to execute:");

@@ -17,14 +17,14 @@ public class Client {
         int portNumber = Integer.parseInt(args[1]);
         System.out.println("CLIENT: About to try to create Client Socket");
         try (
-            Socket echoSocket = new Socket(hostName, portNumber);
+            Socket clientSocket = new Socket(hostName, portNumber);
 //        	System.out.println("CLIENT: Created Client Socket");
         	PrintWriter out =
-                new PrintWriter(echoSocket.getOutputStream(), true);
+                new PrintWriter(clientSocket.getOutputStream(), true);
 //        	System.out.println("CLIENT: Initiated print writer output stream.");
         	BufferedReader in =
                 new BufferedReader(
-                    new InputStreamReader(echoSocket.getInputStream()));
+                    new InputStreamReader(clientSocket.getInputStream()));
 //        	System.out.println("CLIENT: Initiated print buffered reader input stream.");
             BufferedReader stdIn =
                 new BufferedReader(
@@ -57,7 +57,7 @@ public class Client {
     			}
     		}
             System.out.println("CLIENT: Exited while loop.");
-            echoSocket.close();
+            clientSocket.close();
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);
             System.exit(1);
