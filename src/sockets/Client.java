@@ -35,7 +35,7 @@ public class Client {
         	System.out.println("CLIENT: About to wait for user input.");
             while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
-                System.out.println("echo: " + in.readLine());
+                System.out.println("SERVER: " + in.readLine());
             }
             System.out.println("CLIENT: Exited while loop.");
             echoSocket.close();
