@@ -43,9 +43,11 @@ public class Client {
             	String ans = in.readLine();
                 while(in!=null)
                 {
+                	System.out.println("CLIENT: In inner while loop.");
                 	System.out.println(ans);
                 	ans=in.readLine();
-                };
+                }
+                System.out.println("CLIENT: Exited inner while loop.");
             }
             System.out.println("CLIENT: Exited while loop.");
             echoSocket.close();
