@@ -75,6 +75,12 @@ public class Server {
         			int index = tmp.indexOf(' ');
         			Main.AppendFile(tmp.substring(0,index),tmp.substring(index+1,tmp.length()));
         		}
+        		else if(result.substring(0,4).equalsIgnoreCase("exit"))
+        		{
+        			out.println("Exiting...");
+        			out.flush();
+        			Main.ExitConnection();
+        		}
         		else
         			out.println("Error: Invalid Command");
         		            	
