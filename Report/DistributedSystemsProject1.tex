@@ -1,0 +1,179 @@
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%---------------------------------------------------------------------------------------
+\documentclass{article}
+
+\usepackage{fancyhdr} % Required for custom headers
+\usepackage{lastpage} % Required to determine the last page for the footer
+\usepackage{extramarks} % Required for headers and footers
+\usepackage{graphicx} % Required to insert images
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{listings}
+%\usepackage{apacite}
+\usepackage{lipsum}
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\usepackage{xcolor}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={blue!80!black}, %red!50!black
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{verbatim}
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{3em}
+\setlength{\cftsubsecnumwidth}{4em}
+\setlength{\cftsubsubsecnumwidth}{5em}
+\lstset{language=Matlab}
+\lstset{flexiblecolumns=true}
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in 
+
+\linespread{1.1} % Line spacing
+
+% Set up the header and footer
+\pagestyle{fancy}
+\lhead{Sabbir Rashid \& Rob Berman} % Top left header
+\rhead{\textit{\ProjectTitle}} % Top center header
+%\rhead{\firstxmark} % Top right header
+%\lfoot{\lastxmark} % Bottom left footer
+\lfoot{\Institution}
+\cfoot{} % Bottom center footer
+\rfoot{Page\ \thepage\ of\ \pageref{LastPage}} % Bottom right footer
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+% Title and Authors
+\newcommand{\ProjectTitle}{Raymonds Algorithm - A Distributed Approach} % Assignment title
+\newcommand{\Institution}{Renssselaer Polytechnic Institute}
+
+%% Section formating
+\titleclass{\subsubsubsection}{straight}[\subsection]
+
+\newcounter{subsubsubsection}[subsubsection]
+
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\roman{subsubsection}}
+
+\renewcommand\thesubsubsubsection{\thesubsubsection.\roman{subsubsubsection}}
+\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+\titleformat{\section}[block]
+  {\fontsize{14}{15}\bfseries\sffamily\filcenter}
+  {\thesection}
+  {1em}
+  {\MakeUppercase}
+  
+\titleformat{\subsection}[block]
+  {\fontsize{12}{15}\bfseries\sffamily}
+  {\thesubsection}{1em}  {}
+
+\titleformat{\subsubsection}[block]
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+  
+\titleformat{\subsubsubsection}[block]
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+  
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title{
+%\vspace{2in}
+\textmd{\textbf{\ProjectTitle}}\\
+\author{
+	Sabbir Rashid \& Rob Berman\\
+	\bf{\Institution}}
+	\date{} %
+}
+
+\begin{document}
+\lstset{language=Java,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+    numbers=none,
+}
+
+\setlength{\parindent}{8ex}
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\tableofcontents
+\newpage
+\maketitle
+\begin{multicols}{2}
+%------------------------------------------------------------------------------------------
+\section{Abstract}
+\label{sec:Abstract}
+\textit{}
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:Introduction}
+\lipsum[1]
+	\subsection{Problem Statement}
+	\label{subsec:ProblemStatement}
+	\lipsum[2]
+
+
+\section{Conclusions}	
+\lipsum[42]
+
+%\newpage
+\end{multicols}
+\end{document}
