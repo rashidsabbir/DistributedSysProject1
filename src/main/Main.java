@@ -151,7 +151,8 @@ public class Main {
 		while(input!=null)
 		{
 			input=reader.readLine();
-			result = result + "\n"+ input;
+			if(input!=null)
+				result = result + "\n"+ input;
 		}
 		reader.close();
 		return result;
