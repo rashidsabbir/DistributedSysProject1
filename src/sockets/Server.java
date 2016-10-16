@@ -16,7 +16,7 @@ public class Server {
         
         int portNumber = Integer.parseInt(args[0]);
     	System.out.println("SERVER: About to try to create a server socket.");
-        try (
+        try {
 //       		System.out.println("SERVER: Creating server socket.");
             ServerSocket serverSocket =
                 new ServerSocket(Integer.parseInt(args[0]));
@@ -29,7 +29,7 @@ public class Server {
             BufferedReader in = new BufferedReader(
                 new InputStreamReader(clientSocket.getInputStream()));
 //            System.out.println("SERVER: Created buffered reader.");
-            ){
+            
             System.out.println("SERVER: In try. About to print line to out.");
             String inputLine;
             System.out.println("SERVER: In try. About to enter while loop.");
