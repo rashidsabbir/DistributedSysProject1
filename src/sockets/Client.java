@@ -43,7 +43,7 @@ public class Client {
             	String ans = in.readLine();
                 while(in!=null)
                 {
-                	System.out.println("SERVER: " + ans);
+                	System.out.println(ans);
                 	ans=in.readLine();
                 };
             }
