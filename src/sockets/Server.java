@@ -44,10 +44,12 @@ public class Server {
     		out.flush();
     		out.println("4: append <filename> <line>: appends a <line> to <filename>");
        */     
-            while ((inputLine = in.readLine()) != null) {
-            	
+            //while ((inputLine = in.readLine()) != null) {
+            int i  = 0;
+            while (i < 100){	
         		//String result = console.nextLine();
-        		String result = inputLine;
+        		//String result = inputLine;
+            	String result = in.readLine();
         		//Note: Calling create, delete, read, and append go here:
         		File testFile = null;
         		if(result.substring(0,6).equalsIgnoreCase("create"))
