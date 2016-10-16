@@ -46,8 +46,12 @@ class ClientServiceThread extends Thread {
 				+ clientSocket.getInetAddress().getHostName());
 		try {
 			BufferedReader   in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+			System.out.println("SERVER: Created buffered reader in.");
 			PrintWriter   out = new PrintWriter(new OutputStreamWriter(clientSocket.getOutputStream()),true);
+			System.out.println("SERVER: Created print writer out.");
+            
 			while (running) {	
+				System.out.println("SERVER: In running loop.");
 				//String result = console.nextLine();
 				//String result = inputLine;
 				String result = in.readLine();

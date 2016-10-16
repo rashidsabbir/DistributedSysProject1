@@ -48,7 +48,7 @@ public class Client {
                     while((ans=in.readLine()) != null)
                     {
                     	System.out.println("CLIENT: In inner while loop.");
-                    	System.out.println(ans);
+                    	System.out.println(ans + ans.length());
 //                    	ans=in.readLine();
                     	if(ans.length()==0)
                     		break;
