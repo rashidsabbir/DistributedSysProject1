@@ -64,10 +64,8 @@ public class Server {
         		}
         		else if(result.substring(0,4).equalsIgnoreCase("read"))
         		{
-        			out.println("Reading File...");
-        			out.flush();
-        			System.out.println(Main.ReadFile(result.substring(5,result.length())));
-        			out.println(Main.ReadFile(result.substring(5,result.length())));
+        			String temp = Main.ReadFile(result.substring(5,result.length()));
+        			out.println("Reading File...\n" + temp);
         			out.flush();
         		}
         		else if(result.substring(0,6).equalsIgnoreCase("append"))
