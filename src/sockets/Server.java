@@ -2,6 +2,9 @@ package sockets;
 
 import java.io.*;
 import java.net.*;
+import java.util.Scanner;
+
+import main.Main;
 
 public class Server {
     public static void main(String[] args) throws IOException {
@@ -31,6 +34,56 @@ public class Server {
             String inputLine;
             System.out.println("SERVER: In try. About to enter while loop.");
             while ((inputLine = in.readLine()) != null) {
+            	
+            	Scanner console = new Scanner(System.in);
+        		out.println("Select the following command that you want to execute:");
+        		out.println("1: create <filename>: creates an empty file named <filename>");
+        		out.println("2: delete <filename>: deletes file named <filename>");
+        		out.println("3: read <filename>: displays the contents of <filename>");
+        		out.println("4: append <filename> <line>: appends a <line> to <filename>");
+        		
+        		//String result = console.nextLine();
+        		String result = inputLine;
+        		//Note: Calling create, delete, read, and append go here:
+        		File testFile = null;
+        		if(result.substring(0,6).equalsIgnoreCase("create"))
+        		{
+        			out.println("Creating File...");
+        			testFile = Main.CreateFile(result.substring(7,result.length()));
+        		}
+        		else if(result.substring(0,6).equalsIgnoreCase("delete"))
+        		{
+        			out.println("Deleting File...");
+        			Main.DeleteFile(result.substring(7,result.length()));
+        		}
+        		else if(result.substring(0,4).equalsIgnoreCase("read"))
+        		{
+        			out.println("Reading File...");
+        			Main.ReadFile(result.substring(5,result.length()));
+        		}
+        		else if(result.substring(0,6).equalsIgnoreCase("append"))
+        		{
+        			out.println("Appending to File...");
+        			String tmp = result.substring(7,result.length());
+        			int index = tmp.indexOf(' ');
+        			Main.AppendFile(tmp.substring(0,index),tmp.substring(index+1,tmp.length()));
+        		}
+        		else
+        			out.println("Error: Invalid Command");
+        		
+        		console.close();
+            	
+            	
+            	        	
+            	
+            	
+            	
+            	
+            	
+            	
+            	
+            	
+            	
                 out.println(inputLine);
             }
             System.out.println("SERVER: In try. Exited while loop.");
