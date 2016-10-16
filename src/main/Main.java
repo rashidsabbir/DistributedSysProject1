@@ -173,5 +173,10 @@ public class Main {
 	public static void DeleteFile( String fileName) throws IOException {
 		Runtime.getRuntime().exec(new String[]{"bash","-c","rm " + fileName});
 	}
+	
+	public static void ExitConnection()
+	{
+		
+	}
 
 }

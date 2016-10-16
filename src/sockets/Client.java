@@ -38,6 +38,7 @@ public class Client {
     		System.out.println("2: delete <filename>: deletes file named <filename>");
     		System.out.println("3: read <filename>: displays the contents of <filename>");
     		System.out.println("4: append <filename> <line>: appends a <line> to <filename>");
+    		System.out.println("5: exit: exits the program");
             
     		while ((userInput = stdIn.readLine()) != null) {
     			out.println(userInput);
