@@ -1,4 +1,12 @@
 \contentsline {section}{\numberline {I}Abstract}{2}{section.1}
 \contentsline {section}{\numberline {II}Introduction}{2}{section.2}
 \contentsline {subsection}{\numberline {II.I}Problem Statement}{2}{subsection.2.1}
-\contentsline {section}{\numberline {III}Conclusions}{2}{section.3}
+\contentsline {section}{\numberline {III}Methodology}{2}{section.3}
+\contentsline {subsection}{\numberline {III.I}Raymond's Functions}{2}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {III.I.i}assignToken(Process p)}{2}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {III.I.ii}sendRequest(Process p)}{3}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {III.I.iii}requestResource(Process p)}{3}{subsubsection.3.1.3}
+\contentsline {subsubsection}{\numberline {III.I.iv}releaseResource(Process p)}{3}{subsubsection.3.1.4}
+\contentsline {subsubsection}{\numberline {III.I.v}receivedRequestFromNeighbor(Process p, Process neighbor)}{3}{subsubsection.3.1.5}
+\contentsline {subsubsection}{\numberline {III.I.vi}receivedToken(Process p)}{3}{subsubsection.3.1.6}
+\contentsline {section}{\numberline {IV}Conclusions}{3}{section.4}

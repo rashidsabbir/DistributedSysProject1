@@ -62,7 +62,7 @@
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 % Title and Authors
-\newcommand{\ProjectTitle}{Raymonds Algorithm - A Distributed Approach} % Assignment title
+\newcommand{\ProjectTitle}{Raymonds Algorithm - A Centralized Approach} % Assignment title
 \newcommand{\Institution}{Renssselaer Polytechnic Institute}
 
 %% Section formating
@@ -170,7 +170,81 @@
 	\label{subsec:ProblemStatement}
 	\lipsum[2]
 
+\section{Methodology}
+\label{sec:Methodology}
+\lipsum[1]
+	\subsection{Raymond's Functions}
+	\label{subsec:RaymondsFunctions}
+	\lipsum[2]
+		\subsubsection{assignToken(Process p)}
+		\begin{lstlisting}
+public void assignToken(Process p) {
+  if ( (p.holderEnum == Process.HolderEnum.Self) && (!p.usingResource) && (!p.requestQueue.isEmpty()) ) {
+    holderProc = p.requestQueue.pop() ;
 
+    if (p.getProcessID() == holderProc.getProcessID()) { //i.e. the process p is at the front of its own queue
+      p.holderEnum = Process.HolderEnum.Self;
+    } else {
+      p.holderEnum = Process.HolderEnum.Neighbor;
+      holderProc.holderEnum = Process.HolderEnum.Self ;
+    }
+	
+    p.asked = false;
+	
+    if (p.holderEnum == Process.HolderEnum.Self) {
+      p.usingResource = true;
+    } else {
+      assignToken(holderProc); // Check this, supposed to be "send token to holder"
+    }
+  }
+}
+		\end{lstlisting}
+		
+		\subsubsection{sendRequest(Process p)}
+		\begin{lstlisting}
+public void sendRequest(Process p) {
+  if ( (p.holderEnum != Process.HolderEnum.Self) && (!p.requestQueue.isEmpty()) && (!p.asked) ) {
+    sendRequest(holderProc);
+    p.asked = true;
+  }
+}
+		\end{lstlisting}
+		\subsubsection{requestResource(Process p)}
+		\begin{lstlisting}
+public void requestResource(Process p) {
+  p.requestQueue.push(p);
+  assignToken(p);
+  sendRequest(p);
+}
+		\end{lstlisting}
+		
+		\subsubsection{releaseResource(Process p)}
+		\begin{lstlisting}
+public void releaseResource(Process p) {
+  p.usingResource = false;
+  assignToken(p);
+  sendRequest(p);
+}
+		\end{lstlisting}
+		
+		\subsubsection{receivedRequestFromNeighbor(Process p, Process neighbor)}
+		\begin{lstlisting}
+public void receivedRequestFromNeighbor(Process p, Process neighbor) {
+  p.requestQueue.push(neighbor);
+  assignToken(p);
+  sendRequest(p);
+}
+		\end{lstlisting}
+		
+		\subsubsection{receivedToken(Process p)}
+		\begin{lstlisting}
+public void receivedToken(Process p) {
+  p.holderEnum = Process.HolderEnum.Self ;
+  holderProc = p;
+  assignToken(p);
+  sendRequest(p);		
+}
+		\end{lstlisting}
 \section{Conclusions}	
 \lipsum[42]
 
