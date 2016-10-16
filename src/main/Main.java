@@ -147,10 +147,10 @@ public class Main {
 	public static String ReadFile( String fileName) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		String input = reader.readLine();
-		String result = "";
+		String result = input;
 		while(input!=null)
 		{
-			result = result + input + "\n";
+			result = result + "\n"+ input;
 			input=reader.readLine();
 		}
 		reader.close();
