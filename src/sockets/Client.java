@@ -40,12 +40,12 @@ public class Client {
     		System.out.println("4: append <filename> <line>: appends a <line> to <filename>");
             while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
-            	String ans = in.readLine();
-                while(in!=null)
+            	String ans = "";
+                while((ans=in.readLine()) != null)
                 {
                 	System.out.println("CLIENT: In inner while loop.");
                 	System.out.println(ans);
-                	ans=in.readLine();
+//                	ans=in.readLine();
                 }
                 System.out.println("CLIENT: Exited inner while loop.");
             }
