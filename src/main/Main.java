@@ -156,6 +156,19 @@ public class Main {
 		reader.close();
 		return result;
 	}
+	
+	/* while ((userInput = stdIn.readLine()) != null) {
+    out.println(userInput);
+	String ans = "";
+    while((ans=in.readLine()) != null)
+    {
+    	System.out.println("CLIENT: In inner while loop.");
+    	System.out.println(ans);
+//    	ans=in.readLine();
+    }
+    System.out.println("CLIENT: Exited inner while loop.");
+}
+*/
 
 	public static void DeleteFile( String fileName) throws IOException {
 		Runtime.getRuntime().exec(new String[]{"bash","-c","rm " + fileName});

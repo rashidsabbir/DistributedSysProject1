@@ -42,6 +42,15 @@ public class Client {
     		while ((userInput = stdIn.readLine()) != null) {
     			out.println(userInput);
     			System.out.println(in.readLine());
+    			if (userInput.contains("read")){
+    				String ans = "";
+                    while((ans=in.readLine()) != null)
+                    {
+                    	System.out.println("CLIENT: In inner while loop.");
+                    	System.out.println(ans);
+//                    	ans=in.readLine();
+                    }
+    			}
     		}
     		
     		
