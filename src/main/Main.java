@@ -137,7 +137,7 @@ public class Main {
 
 	public static void AppendFile( String fileName, String line) throws IOException {
 
-		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
 		writer.append(line);
 		writer.flush();
 		writer.close();
