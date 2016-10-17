@@ -7,13 +7,13 @@
 \contentsline {subsubsection}{\numberline {III.II.i}assignToken(Process p)}{5}{subsubsection.3.2.1}
 \contentsline {subsubsection}{\numberline {III.II.ii}sendRequest(Process p)}{5}{subsubsection.3.2.2}
 \contentsline {subsubsection}{\numberline {III.II.iii}requestResource(Process p)}{5}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {III.II.iv}releaseResource(Process p)}{5}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {III.II.iv}releaseResource(Process p)}{6}{subsubsection.3.2.4}
 \contentsline {subsubsection}{\numberline {III.II.v}receivedRequestFromNeighbor(Process p, Process neighbor)}{6}{subsubsection.3.2.5}
 \contentsline {subsubsection}{\numberline {III.II.vi}receivedToken(Process p)}{6}{subsubsection.3.2.6}
 \contentsline {subsection}{\numberline {III.III}Client Implementation}{6}{subsection.3.3}
 \contentsline {subsection}{\numberline {III.IV}Single Threaded Server}{7}{subsection.3.4}
 \contentsline {subsection}{\numberline {III.V}Multithreaded Server}{9}{subsection.3.5}
-\contentsline {section}{\numberline {IV}Main}{11}{section.4}
-\contentsline {subsection}{\numberline {IV.I}Create Tree Structure}{11}{subsection.4.1}
+\contentsline {section}{\numberline {IV}Main}{12}{section.4}
+\contentsline {subsection}{\numberline {IV.I}Create Tree Structure}{12}{subsection.4.1}
 \contentsline {subsection}{\numberline {IV.II}Read, Create, Append \& Delete}{14}{subsection.4.2}
-\contentsline {section}{\numberline {V}Conclusions}{14}{section.5}
+\contentsline {section}{\numberline {V}Conclusions}{15}{section.5}
