@@ -8,7 +8,7 @@ To run the code complete the following steps.
 ### when reviewing your EC2 instance, 
 ###  add a security rule to allow all port access.
 ###   make sure you can reach the distributed networks
-ping <server_address>  
+ping <\server_address\>  
 ### install git
 sudo yum install git
 ### update java
@@ -28,9 +28,9 @@ git clone https://github.com/rashidsabbir/DistributedSysProject1.git
 ### in the DistributedSysProject1 directory,
 ###  to run a Single Threaded Server instance,
 ###   (where other processes are blocked) 
-java -jar Server.jar <port_number>
+java -jar Server.jar \<port_number\>
 ### to run a Multi-threaded Server instance
 ###  where multiple clients can access the system at a time
-java -jar MultiThread.jar <port_number>
+java -jar MultiThread.jar \<port_number\>
 ### to run a Client instance
-java -jar Client.jar <host_address> <port_number>  
+java -jar Client.jar \<host_address\> \<port_number\>  
