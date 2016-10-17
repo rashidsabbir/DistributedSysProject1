@@ -16,7 +16,7 @@
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 \usepackage{xcolor}
 \usepackage{array}
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+%\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
@@ -173,9 +173,94 @@
 \section{Methodology}
 \label{sec:Methodology}
 \lipsum[1]
+	\subsection{Tree Implementation}
+	\label{subsec:Tree}
+		\begin{lstlisting}
+package raymonds;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Tree {
+	private static ArrayList<Process> processes;
+	public Tree() throws IOException
+	{
+		processes = new ArrayList<Process>();
+		FileReader fr = new FileReader("tree.txt");
+		BufferedReader br = new BufferedReader(fr);
+		String input = br.readLine();
+		boolean first = true;
+		while(input!=null)
+		{
+			if(first)
+			{
+				processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+				processes.get(0).addNeighbor(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+				processes.add(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+				processes.get(1).addNeighbor(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+				first = false;
+			}
+			else
+			{
+				int index = 0;
+				boolean found=false;
+				for(int i=0;i<processes.size();i++)
+				{
+					if(input.substring(1,2).equals(processes.get(i).getProcessID()))
+					{
+						found=true;
+						index=i;
+					}
+					
+				}
+				if(!found)
+				{
+					processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+					processes.get(processes.size()-1).addNeighbor(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+				}
+				else
+				{
+					if(!processes.get(index).getNeighbors().contains(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false)))
+					{
+						processes.get(index).addNeighbor(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+						System.out.println("CONTAINS 1");
+					}
+				}
+				found=false;
+				index = 0;
+				for(int i=0;i<processes.size();i++)
+				{
+					if(input.substring(3,4).equals(processes.get(i).getProcessID()))
+					{
+						found=true;
+						index=i;
+					}
+				}
+				if(!found)
+				{
+					processes.add(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
+					processes.get(processes.size()-1).addNeighbor(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+				}
+				else
+				{
+					if(!processes.get(index).getNeighbors().contains(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false)))
+					{
+						processes.get(index).addNeighbor(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
+						System.out.println("CONTAINS 2");
+					}
+				}
+			}
+			input=br.readLine();
+		}
+	}
+}
+		\end{lstlisting}
+
 	\subsection{Raymond's Functions}
 	\label{subsec:RaymondsFunctions}
-	\lipsum[2]
+	Our java implementation of Raymond's Algorithm functionality is listed and described in this section.
 		\subsubsection{assignToken(Process p)}
 		\begin{lstlisting}
 public void assignToken(Process p) {
@@ -245,7 +330,7 @@ public void receivedToken(Process p) {
   sendRequest(p);		
 }
 		\end{lstlisting}
-	\subsection{Client Code}
+	\subsection{Client Implementation}
 		\begin{lstlisting}
 package sockets;
 
@@ -312,7 +397,104 @@ public class Client {
     }
 }
 		\end{lstlisting}
-	\subsection{Multithreaded Server Code}
+	\subsection{Single Threaded Server}
+		\begin{lstlisting}
+package sockets;
+
+import java.io.*;
+import java.net.*;
+
+import main.Main;
+
+public class Server {
+    public static void main(String[] args) throws IOException {
+        
+        if (args.length != 1) {
+            System.err.println("Usage: java Server <port number>");
+            System.exit(1);
+        }
+        
+        int portNumber = Integer.parseInt(args[0]);
+    	System.out.println("SERVER: About to try to create a server socket.");
+        try {
+       		System.out.println("SERVER: Creating server socket.");
+            ServerSocket serverSocket =
+                new ServerSocket(Integer.parseInt(args[0]));
+            System.out.println("SERVER: About to set Client Socket.");
+            Socket clientSocket = serverSocket.accept();
+            System.out.println("SERVER: Created Client Socket.");
+            PrintWriter out =
+                new PrintWriter(clientSocket.getOutputStream(), true);
+            System.out.println("SERVER: Created print writer out.");
+            BufferedReader in = new BufferedReader(
+                new InputStreamReader(clientSocket.getInputStream()));
+            System.out.println("SERVER: Created buffered reader.");
+            
+            System.out.println("SERVER: In try. About to enter while loop.");
+
+     /*       out.println("Select the following command that you want to execute:");
+            out.flush();
+    		out.println("1: create <filename>: creates an empty file named <filename>");
+    		out.flush();
+    		out.println("2: delete <filename>: deletes file named <filename>");
+    		out.flush();
+    		out.println("3: read <filename>: displays the contents of <filename>");
+    		out.flush();
+    		out.println("4: append <filename> <line>: appends a <line> to <filename>");
+       */     
+            //while ((inputLine = in.readLine()) != null) {
+            int i  = 0;
+            while (i < 100){	
+        		//String result = console.nextLine();
+        		//String result = inputLine;
+            	String result = in.readLine();
+        		//Note: Calling create, delete, read, and append go here:
+        		File testFile = null;
+        		if(result.substring(0,6).equalsIgnoreCase("create"))
+        		{
+        			out.println("Creating File...");
+        			testFile = Main.CreateFile(result.substring(7,result.length()));
+        		}
+        		else if(result.substring(0,6).equalsIgnoreCase("delete"))
+        		{
+        			out.println("Deleting File...");
+        			Main.DeleteFile(result.substring(7,result.length()));
+        		}
+        		else if(result.substring(0,4).equalsIgnoreCase("read"))
+        		{
+        			String temp = Main.ReadFile(result.substring(5,result.length()));
+        			out.println("Reading File...\n" + temp);
+        			out.flush();
+        		}
+        		else if(result.substring(0,6).equalsIgnoreCase("append"))
+        		{
+        			out.println("Appending to File...");
+        			String tmp = result.substring(7,result.length());
+        			int index = tmp.indexOf(' ');
+        			Main.AppendFile(tmp.substring(0,index),tmp.substring(index+1,tmp.length()));
+        		}
+        		else if(result.substring(0,4).equalsIgnoreCase("exit"))
+        		{
+        			out.println("Exiting...");
+        			out.flush();
+        			Main.ExitConnection();
+        		}
+        		else
+        			out.println("Error: Invalid Command");
+        		            	
+            }
+            System.out.println("SERVER: In try. Exited while loop.");
+            serverSocket.close();
+        } catch (IOException e) {
+            System.out.println("Exception caught when trying to listen on port "
+                + portNumber + " or listening for a connection");
+            System.out.println(e.getMessage());
+        }
+    }
+}
+		\end{lstlisting}
+
+	\subsection{Multithreaded Server}
 		\begin{lstlisting}
 package sockets;
 
@@ -415,7 +597,8 @@ class ClientServiceThread extends Thread {
 }
 		\end{lstlisting}
 		
-		\section{Main - Read, Write, Append, Delete}
+	\section{Main}
+		\subsection{Create Tree Structure}
 		\begin{lstlisting}
 package main;
 
@@ -507,7 +690,9 @@ public class Main {
 			System.out.println();
 		}
 	}
-	
+	\end{lstlisting}
+	\subsection{Read, Create, Append \& Delete}
+	\begin{lstlisting}
 	public static File CreateFile( String fileName) throws IOException {
 		
 		File file = new File(fileName);
@@ -540,11 +725,6 @@ public class Main {
 
 	public static void DeleteFile( String fileName) throws IOException {
 		Runtime.getRuntime().exec(new String[]{"bash","-c","rm " + fileName});
-	}
-	
-	public static void ExitConnection()
-	{
-		
 	}
 
 }

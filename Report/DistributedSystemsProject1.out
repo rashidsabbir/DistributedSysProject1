@@ -2,14 +2,18 @@
 \BOOKMARK [1][-]{section.2}{Introduction}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Problem Statement}{section.2}% 3
 \BOOKMARK [1][-]{section.3}{Methodology}{}% 4
-\BOOKMARK [2][-]{subsection.3.1}{Raymond's Functions}{section.3}% 5
-\BOOKMARK [3][-]{subsubsection.3.1.1}{assignToken\(Process p\)}{subsection.3.1}% 6
-\BOOKMARK [3][-]{subsubsection.3.1.2}{sendRequest\(Process p\)}{subsection.3.1}% 7
-\BOOKMARK [3][-]{subsubsection.3.1.3}{requestResource\(Process p\)}{subsection.3.1}% 8
-\BOOKMARK [3][-]{subsubsection.3.1.4}{releaseResource\(Process p\)}{subsection.3.1}% 9
-\BOOKMARK [3][-]{subsubsection.3.1.5}{receivedRequestFromNeighbor\(Process p, Process neighbor\)}{subsection.3.1}% 10
-\BOOKMARK [3][-]{subsubsection.3.1.6}{receivedToken\(Process p\)}{subsection.3.1}% 11
-\BOOKMARK [2][-]{subsection.3.2}{Client Code}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.3}{Multithreaded Server Code}{section.3}% 13
-\BOOKMARK [1][-]{section.4}{Main - Read, Write, Append, Delete}{}% 14
-\BOOKMARK [1][-]{section.5}{Conclusions}{}% 15
+\BOOKMARK [2][-]{subsection.3.1}{Tree Implementation}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Raymond's Functions}{section.3}% 6
+\BOOKMARK [3][-]{subsubsection.3.2.1}{assignToken\(Process p\)}{subsection.3.2}% 7
+\BOOKMARK [3][-]{subsubsection.3.2.2}{sendRequest\(Process p\)}{subsection.3.2}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.3}{requestResource\(Process p\)}{subsection.3.2}% 9
+\BOOKMARK [3][-]{subsubsection.3.2.4}{releaseResource\(Process p\)}{subsection.3.2}% 10
+\BOOKMARK [3][-]{subsubsection.3.2.5}{receivedRequestFromNeighbor\(Process p, Process neighbor\)}{subsection.3.2}% 11
+\BOOKMARK [3][-]{subsubsection.3.2.6}{receivedToken\(Process p\)}{subsection.3.2}% 12
+\BOOKMARK [2][-]{subsection.3.3}{Client Implementation}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.4}{Single Threaded Server}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.5}{Multithreaded Server}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Main}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Create Tree Structure}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Read, Create, Append \046 Delete}{section.4}% 18
+\BOOKMARK [1][-]{section.5}{Conclusions}{}% 19
