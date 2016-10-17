@@ -261,7 +261,9 @@ public class Tree {
 	\subsection{Raymond's Functions}
 	\label{subsec:RaymondsFunctions}
 	Our java implementation of Raymond's Algorithm functionality is listed and described in this section.
+	
 		\subsubsection{assignToken(Process p)}
+First, we can assign the token by inputing a process and checking all of the usual parameters of Raymond's algorithm to see if we are able to assign the token to the process.
 		\begin{lstlisting}
 public void assignToken(Process p) {
   if ( (p.holderEnum == Process.HolderEnum.Self) && (!p.usingResource) && (!p.requestQueue.isEmpty()) ) {
@@ -284,7 +286,7 @@ public void assignToken(Process p) {
   }
 }
 		\end{lstlisting}
-		
+		We can send a request for the token by inputing the process that is requesting the token and adding the request to the processe's request queue
 		\subsubsection{sendRequest(Process p)}
 		\begin{lstlisting}
 public void sendRequest(Process p) {
@@ -295,6 +297,7 @@ public void sendRequest(Process p) {
 }
 		\end{lstlisting}
 		\subsubsection{requestResource(Process p)}
+		Calls of the necessary functions in order to request the token.
 		\begin{lstlisting}
 public void requestResource(Process p) {
   p.requestQueue.push(p);
@@ -304,6 +307,7 @@ public void requestResource(Process p) {
 		\end{lstlisting}
 		
 		\subsubsection{releaseResource(Process p)}
+		Once the process is done using the resource, it releases it from being used.
 		\begin{lstlisting}
 public void releaseResource(Process p) {
   p.usingResource = false;
@@ -313,6 +317,7 @@ public void releaseResource(Process p) {
 		\end{lstlisting}
 		
 		\subsubsection{receivedRequestFromNeighbor(Process p, Process neighbor)}
+		This function is used in a similar fashion to requestResource, except it does it for the neighbor of the process
 		\begin{lstlisting}
 public void receivedRequestFromNeighbor(Process p, Process neighbor) {
   p.requestQueue.push(neighbor);
@@ -320,8 +325,8 @@ public void receivedRequestFromNeighbor(Process p, Process neighbor) {
   sendRequest(p);
 }
 		\end{lstlisting}
-		
 		\subsubsection{receivedToken(Process p)}
+		Assigns the token to the given function when it receives it
 		\begin{lstlisting}
 public void receivedToken(Process p) {
   p.holderEnum = Process.HolderEnum.Self ;
@@ -599,6 +604,7 @@ class ClientServiceThread extends Thread {
 		
 	\section{Main}
 		\subsection{Create Tree Structure}
+		Creates the tree structure from the given input file. When a tree is created,  first,  all of the given processes are added to an ArrayList. Then, once they are added, each process is checked again to see what neighbors they have and their neighbors are added to a neighbors ArrayList for each process as well.
 		\begin{lstlisting}
 package main;
 

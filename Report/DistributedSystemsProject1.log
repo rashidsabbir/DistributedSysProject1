@@ -1,15 +1,19 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.6.18)  16 OCT 2016 21:33
+=======
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.7)  16 OCT 2016 21:32
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **DistributedSystemsProject1.tex
 (./DistributedSystemsProject1.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 3 language(s) loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -35,28 +39,32 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \f@ncyO@orf=\skip51
 )
 (/usr/share/texlive/texmf-dist/tex/latex/lastpage/lastpage.sty
-Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
+Package: lastpage 2013/01/28 v1.2l Refers to last page's name (HMM; JPG)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/extramarks.sty
 \@temptokenb=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks15
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
+<<<<<<< HEAD
 Package graphics Info: Driver file: pdftex.def on input line 95.
+=======
+Package graphics Info: Driver file: pdftex.def on input line 91.
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -84,26 +92,27 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2016/03/03 v2.15a AMS math features
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01 AMS text
+Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0 generic functions
+File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen105
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
+<<<<<<< HEAD
 LaTeX Info: Redefining \frac on input line 199.
 \uproot@=\count89
 \leftroot@=\count90
@@ -118,6 +127,22 @@ LaTeX Info: Redefining \cdots on input line 518.
 \big@size=\dimen107
 LaTeX Font Info:    Redeclaring font encoding OML on input line 630.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
+=======
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen107
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -138,11 +163,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 631.
 \multlinegap=\skip53
 \multlinetaggap=\skip54
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2735.
-LaTeX Info: Redefining \] on input line 2736.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+<<<<<<< HEAD
 Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
+=======
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \c@tracingmulticols=\count100
 \mult@box=\box28
 \multicol@leftmargin=\dimen114
@@ -159,7 +188,6 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 \multicolbaselineskip=\skip56
 \partial@page=\box29
 \last@line=\box30
-\maxbalancingoverflow=\dimen119
 \mult@rightbox=\box31
 \mult@grightbox=\box32
 \mult@gfirstbox=\box33
@@ -183,18 +211,28 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 \@tempa=\box51
 \c@columnbadness=\count106
 \c@finalcolumnbadness=\count107
+<<<<<<< HEAD
 \last@try=\dimen120
 \multicolovershoot=\dimen121
 \multicolundershoot=\dimen122
 \mult@nat@firstbox=\box52
 \colbreak@box=\box53
 \mc@col@check@num=\count108
+=======
+\last@try=\dimen119
+\multicolovershoot=\dimen120
+\multicolundershoot=\dimen121
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+\multicol@sort@counter=\count108
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count109
 \lst@gtempboxa=\box54
 \lst@token=\toks22
 \lst@length=\count110
+<<<<<<< HEAD
 \lst@currlwidth=\dimen123
 \lst@column=\count111
 \lst@pos=\count112
@@ -206,17 +244,34 @@ Package: multicol 2015/08/19 v1.8n multicolumn formatting (FMi)
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+=======
+\lst@currlwidth=\dimen122
+\lst@column=\count111
+\lst@pos=\count112
+\lst@lostspace=\dimen123
+\lst@width=\dimen124
+\lst@newlines=\count113
+\lst@lineno=\count114
+\lst@maxwidth=\dimen125
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \c@lstnumber=\count115
 \lst@skipnumbers=\count116
 \lst@framebox=\box55
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2015/06/04 1.6 listings configuration
+File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty
+<<<<<<< HEAD
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+=======
+Package: lipsum 2011/04/14 v1.2 150 paragraphs of Lorem Ipsum dummy text
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \c@lips@count=\count117
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
@@ -227,12 +282,16 @@ Package tocbibind Info: The document has section divisions on input line 50.
 Package tocbibind Note: Using section or other style headings.
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
+<<<<<<< HEAD
 Package color Info: Driver file: pdftex.def on input line 143.
+=======
+Package color Info: Driver file: pdftex.def on input line 130.
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 )
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
@@ -253,9 +312,9 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen127
-\extrarowheight=\dimen128
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen126
+\extrarowheight=\dimen127
 \NC@list=\toks23
 \extratabsurround=\skip57
 \backup@length=\skip58
@@ -317,7 +376,11 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
+<<<<<<< HEAD
 \@linkdim=\dimen129
+=======
+\@linkdim=\dimen128
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \Hy@linkcounter=\count118
 \Hy@pagecounter=\count119
 
@@ -343,10 +406,17 @@ Package hyperref Info: Bookmarks ON on input line 4688.
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
+<<<<<<< HEAD
 \XeTeXLinkMargin=\dimen130
 \Fld@menulength=\count122
 \Field@Width=\dimen131
 \Fld@charsize=\dimen132
+=======
+\XeTeXLinkMargin=\dimen129
+\Fld@menulength=\count122
+\Field@Width=\dimen130
+\Fld@charsize=\dimen131
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -388,12 +458,17 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip60
+<<<<<<< HEAD
 \enit@outerparindent=\dimen133
+=======
+\enit@outerparindent=\dimen132
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \enit@toks=\toks26
 \enit@inbox=\box58
 \enitdp@description=\count129
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+<<<<<<< HEAD
 Package: titlesec 2016/03/15 v2.10.1 Sectioning titles
 \ttl@box=\box59
 \beforetitleunit=\skip61
@@ -407,6 +482,21 @@ Package: titlesec 2016/03/15 v2.10.1 Sectioning titles
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+=======
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box59
+\beforetitleunit=\skip61
+\aftertitleunit=\skip62
+\ttl@plus=\dimen133
+\ttl@minus=\dimen134
+\ttl@toksa=\toks27
+\titlewidth=\dimen135
+\titlewidthlast=\dimen136
+\titlewidthfirst=\dimen137
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \every@verbatim=\toks28
 \verbatim@line=\toks29
 \verbatim@in@stream=\read1
@@ -449,12 +539,12 @@ Package tocloft Info: The document has section divisions on input line 44.
 \cfttabnumwidth=\skip93
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
+File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 \c@subsubsubsection=\count132
 
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/block.tss
-File: block.tss 2016/03/15
+File: block.tss 2011/12/15
 )
 (./DistributedSystemsProject1.aux)
 \openout1 = `DistributedSystemsProject1.aux'.
@@ -474,19 +564,31 @@ LaTeX Font Info:    ... okay on input line 131.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 131.
 LaTeX Font Info:    ... okay on input line 131.
 Package lastpage Info: Please have a look at the pageslts package at
-(lastpage)             https://www.ctan.org/pkg/pageslts
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             macros/latex/contrib/pageslts/ 
+(lastpage)             or
+(lastpage)             http://www.ctan.org/tex-archive/ 
+(lastpage)             install/macros/latex/contrib/pageslts.tds.zip
 (lastpage)             ! on input line 131.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count133
+<<<<<<< HEAD
 \scratchdimen=\dimen139
+=======
+\scratchdimen=\dimen138
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \scratchbox=\box60
 \nofMPsegments=\count134
 \nofMParguments=\count135
 \everyMPshowfont=\toks30
 \MPscratchCnt=\count136
+<<<<<<< HEAD
 \MPscratchDim=\dimen140
+=======
+\MPscratchDim=\dimen139
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 \MPnumerator=\count137
 \makeMPintoPDFobject=\count138
 \everyMPtoPDFconversion=\toks31
@@ -527,7 +629,7 @@ LaTeX Info: Redefining \nameref on input line 131.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
+File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
 (./DistributedSystemsProject1.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
@@ -545,12 +647,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [1
 
+<<<<<<< HEAD
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+=======
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 186.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
@@ -558,25 +664,35 @@ LaTeX Font Info:    Try loading font information for OML+cmr on input line 187.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
-File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 187.
  [2] [3] [4] [5]
 [6] [7] [8] [9] [10] [11] [12] [13] 
 AED: lastpage setting LastPage
+<<<<<<< HEAD
 [14]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 737.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 737.
  (./DistributedSystemsProject1.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 737.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 737.
+=======
+[15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 743.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 743.
+ (./DistributedSystemsProject1.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 743.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 743.
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 Package rerunfilecheck Info: File `DistributedSystemsProject1.out' has not chan
 ged.
 (rerunfilecheck)             Checksum: 1A2161D36C49E3AA1560A14FD6D482CD;1336.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 737.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 743.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  10074 strings out of 494953
  143904 string characters out of 6180977
  508812 words of memory out of 5000000
@@ -584,6 +700,15 @@ Here is how much of TeX's memory you used:
  12744 words of font info for 49 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  37i,12n,54p,300b,1743s stack positions out of 5000i,500n,10000p,200000b,80000s
+=======
+ 10035 strings out of 495028
+ 143347 string characters out of 6181498
+ 490423 words of memory out of 5000000
+ 12554 multiletter control sequences out of 15000+600000
+ 12744 words of font info for 49 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 38i,12n,61p,345b,1743s stack positions out of 5000i,500n,10000p,200000b,80000s
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
@@ -592,10 +717,18 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti10.pfb>
+<<<<<<< HEAD
 Output written on DistributedSystemsProject1.pdf (14 pages, 145171 bytes).
 PDF statistics:
  848 PDF objects out of 1000 (max. 8388607)
  815 compressed objects within 9 object streams
  554 named destinations out of 1000 (max. 500000)
+=======
+Output written on DistributedSystemsProject1.pdf (15 pages, 146444 bytes).
+PDF statistics:
+ 853 PDF objects out of 1000 (max. 8388607)
+ 819 compressed objects within 9 object streams
+ 555 named destinations out of 1000 (max. 500000)
+>>>>>>> 05182b5e085ba1fe884df74933474057d8115846
  153 words of extra memory for PDF output out of 10000 (max. 10000000)
 
