@@ -156,10 +156,6 @@
 \newpage
 \maketitle
 %\begin{multicols}{2}
-%------------------------------------------------------------------------------------------
-\section{Abstract}
-\label{sec:Abstract}
-\textit{}
 %----------------------------------------------------------------------------------------
 %	INTRODUCTION
 %----------------------------------------------------------------------------------------
@@ -171,8 +167,47 @@ In this report we discuss our implementation of Raymond's Algorithm, as well as 
 	The goal for this project was to implement a distributed application were files could be created, appended to, read, and deleted. In order to ensure that no two processes could access a single file at once, Raymond's Algorithm can be used to ensure mutual exclusion.
 
 \section{Methodology}
+The goal of this project is to implement Raymond's Algorithm in the a distributed environment, such as Amazon Web Services EC2 Instances. 
+
+\begin{lstlisting}
+# Distributed Systems Project 1
+
+To run the code complete the following steps.
+## Initial Set up
+When reviewing your EC2 instance, 
+ add a security rule to allow all port access.
+  Make sure you can reach the distributed networks
+### ping \<server_address\>  
+To install git
+### sudo yum install git
+To update java
+### sudo yum install java-1.8.0
+For compiling java
+### sudo yum install java-1.8.0-openjdk-devel
+To remove older java
+### sudo yum remove java-1.7.0-openjdk
+If you wish to keep the old java version,
+ use the following to determine the default versions to use
+### sudo /usr/sbin/alternatives --config java
+And for the default compiler
+### sudo /usr/sbin/alternatives --config javac
+To pull the git repository
+### git clone https://github.com/rashidsabbir/DistributedSysProject1.git
+
+## JAR Files
+In the DistributedSysProject1 directory,
+ to run a Single Threaded Server instance,
+  (where other processes are blocked) 
+### java -jar Server.jar \<port_number\>
+To run a Multi-threaded Server instance
+ where multiple clients can access the system at a time
+### java -jar MultiThread.jar \<port_number\>
+To run a Client instance
+### java -jar Client.jar \<host_address\> \<port_number\>  
+
+\end{lstlisting}
 \label{sec:Methodology}
-\lipsum[1]
+In order to implement Raymond's Algorithm, we used the Java Buffered and File Reader and Writer packages, as well as other standard packages. In order to implement the server and client, we used the socket and server socket packages.
 	\subsection{Tree Implementation}
 	\label{subsec:Tree}
 		\begin{lstlisting}
@@ -336,6 +371,7 @@ public void receivedToken(Process p) {
 }
 		\end{lstlisting}
 	\subsection{Client Implementation}
+	The client was implemented using the java Net and IO packages. The client is able to decide which file operation to conduct.
 		\begin{lstlisting}
 package sockets;
 
@@ -403,6 +439,7 @@ public class Client {
 }
 		\end{lstlisting}
 	\subsection{Single Threaded Server}
+	The Single Threaded Server implementation is listed below.
 		\begin{lstlisting}
 package sockets;
 
@@ -500,6 +537,7 @@ public class Server {
 		\end{lstlisting}
 
 	\subsection{Multithreaded Server}
+	The multithreaded sever implementation allows for multiple clients to access the server.
 		\begin{lstlisting}
 package sockets;
 
@@ -602,8 +640,8 @@ class ClientServiceThread extends Thread {
 }
 		\end{lstlisting}
 		
-	\section{Main}
-		\subsection{Create Tree Structure}
+	\subsection{Main}
+		\subsubsection{Create Tree Structure}
 		Creates the tree structure from the given input file. When a tree is created,  first,  all of the given processes are added to an ArrayList. Then, once they are added, each process is checked again to see what neighbors they have and their neighbors are added to a neighbors ArrayList for each process as well.
 		\begin{lstlisting}
 package main;
@@ -697,7 +735,7 @@ public class Main {
 		}
 	}
 	\end{lstlisting}
-	\subsection{Read, Create, Append \& Delete}
+	\subsubsection{Read, Create, Append \& Delete}
 	\begin{lstlisting}
 	public static File CreateFile( String fileName) throws IOException {
 		

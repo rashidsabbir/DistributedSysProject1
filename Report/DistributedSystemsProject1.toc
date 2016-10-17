@@ -1,19 +1,18 @@
-\contentsline {section}{\numberline {I}Abstract}{2}{section.1}
-\contentsline {section}{\numberline {II}Introduction}{2}{section.2}
-\contentsline {subsection}{\numberline {II.I}Problem Statement}{2}{subsection.2.1}
-\contentsline {section}{\numberline {III}Methodology}{2}{section.3}
-\contentsline {subsection}{\numberline {III.I}Tree Implementation}{2}{subsection.3.1}
-\contentsline {subsection}{\numberline {III.II}Raymond's Functions}{4}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {III.II.i}assignToken(Process p)}{4}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {III.II.ii}sendRequest(Process p)}{5}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {III.II.iii}requestResource(Process p)}{5}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {III.II.iv}releaseResource(Process p)}{5}{subsubsection.3.2.4}
-\contentsline {subsubsection}{\numberline {III.II.v}receivedRequestFromNeighbor(Process p, Process neighbor)}{6}{subsubsection.3.2.5}
-\contentsline {subsubsection}{\numberline {III.II.vi}receivedToken(Process p)}{6}{subsubsection.3.2.6}
-\contentsline {subsection}{\numberline {III.III}Client Implementation}{6}{subsection.3.3}
-\contentsline {subsection}{\numberline {III.IV}Single Threaded Server}{7}{subsection.3.4}
-\contentsline {subsection}{\numberline {III.V}Multithreaded Server}{9}{subsection.3.5}
-\contentsline {section}{\numberline {IV}Main}{11}{section.4}
-\contentsline {subsection}{\numberline {IV.I}Create Tree Structure}{11}{subsection.4.1}
-\contentsline {subsection}{\numberline {IV.II}Read, Create, Append \& Delete}{14}{subsection.4.2}
-\contentsline {section}{\numberline {V}Conclusions}{15}{section.5}
+\contentsline {section}{\numberline {I}Introduction}{2}{section.1}
+\contentsline {subsection}{\numberline {I.I}Problem Statement}{2}{subsection.1.1}
+\contentsline {section}{\numberline {II}Methodology}{2}{section.2}
+\contentsline {subsection}{\numberline {II.I}Tree Implementation}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {II.II}Raymond's Functions}{5}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {II.II.i}assignToken(Process p)}{5}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {II.II.ii}sendRequest(Process p)}{6}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {II.II.iii}requestResource(Process p)}{6}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {II.II.iv}releaseResource(Process p)}{6}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {II.II.v}receivedRequestFromNeighbor(Process p, Process neighbor)}{6}{subsubsection.2.2.5}
+\contentsline {subsubsection}{\numberline {II.II.vi}receivedToken(Process p)}{6}{subsubsection.2.2.6}
+\contentsline {subsection}{\numberline {II.III}Client Implementation}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {II.IV}Single Threaded Server}{8}{subsection.2.4}
+\contentsline {subsection}{\numberline {II.V}Multithreaded Server}{10}{subsection.2.5}
+\contentsline {subsection}{\numberline {II.VI}Main}{12}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {II.VI.i}Create Tree Structure}{12}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {II.VI.ii}Read, Create, Append \& Delete}{15}{subsubsection.2.6.2}
+\contentsline {section}{\numberline {III}Conclusions}{15}{section.3}
