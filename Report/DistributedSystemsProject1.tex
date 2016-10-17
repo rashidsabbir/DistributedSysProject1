@@ -165,10 +165,10 @@
 %----------------------------------------------------------------------------------------
 \section{Introduction}
 \label{sec:Introduction}
-\lipsum[1]
+In this report we discuss our implementation of Raymond's Algorithm, as well as our design for file operation, and our set up of Client and Server Access.
 	\subsection{Problem Statement}
 	\label{subsec:ProblemStatement}
-	\lipsum[2]
+	The goal for this project was to implement a distributed application were files could be created, appended to, read, and deleted. In order to ensure that no two processes could access a single file at once, Raymond's Algorithm can be used to ensure mutual exclusion.
 
 \section{Methodology}
 \label{sec:Methodology}
@@ -730,7 +730,7 @@ public class Main {
 }
 		\end{lstlisting}
 \section{Conclusions}	
-\lipsum[42]
+In conclusion, while we were able to implement a Centralized File System and write the functionality for Raymond's algorithm, we did not complete the distributed approach.
 
 %\newpage
 %\end{multicols}
