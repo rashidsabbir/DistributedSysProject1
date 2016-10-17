@@ -13,10 +13,12 @@ import raymonds.Process;
 public class Main {
 
 	public static void main(String[] args) throws IOException {
+		// read input file
 		FileReader fr = new FileReader("tree.txt");
 		BufferedReader br = new BufferedReader(fr);
 		String input = br.readLine();
 		boolean first = true;
+		
 		ArrayList<Process> processes = new ArrayList<Process>();
 		while(input!=null)
 		{
@@ -39,8 +41,8 @@ public class Main {
 						found=true;
 						index=i;
 					}
-					
 				}
+				
 				if(!found)
 				{
 					processes.add(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
@@ -51,9 +53,10 @@ public class Main {
 					if(!processes.get(index).getNeighbors().contains(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false)))
 					{
 						processes.get(index).addNeighbor(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
-						System.out.println("CONTAINS 1");
+						//System.out.println("CONTAINS 1");
 					}
 				}
+				
 				found=false;
 				index = 0;
 				for(int i=0;i<processes.size();i++)
@@ -74,12 +77,13 @@ public class Main {
 					if(!processes.get(index).getNeighbors().contains(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false)))
 					{
 						processes.get(index).addNeighbor(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
-						System.out.println("CONTAINS 2");
+						//System.out.println("CONTAINS 2");
 					}
 				}
 			}
 			input=br.readLine();
 		}
+		
 		for(int i=0;i<processes.size();i++)
 		{
 			System.out.println(processes.get(i).getProcessID());
@@ -157,19 +161,6 @@ public class Main {
 		reader.close();
 		return result;
 	}
-	
-	/* while ((userInput = stdIn.readLine()) != null) {
-    out.println(userInput);
-	String ans = "";
-    while((ans=in.readLine()) != null)
-    {
-    	System.out.println("CLIENT: In inner while loop.");
-    	System.out.println(ans);
-//    	ans=in.readLine();
-    }
-    System.out.println("CLIENT: Exited inner while loop.");
-}
-*/
 
 	public static void DeleteFile( String fileName) throws IOException {
 		Runtime.getRuntime().exec(new String[]{"bash","-c","rm " + fileName});

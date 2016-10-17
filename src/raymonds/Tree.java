@@ -76,7 +76,9 @@ public class Tree {
 			}
 			input=br.readLine();
 		}
+		br.close();	
 	}
+		
 	public static void main(String[] args) throws IOException {
 		
 	}

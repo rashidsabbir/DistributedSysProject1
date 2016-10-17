@@ -52,11 +52,21 @@ class ClientServiceThread extends Thread {
             
 			while (running) {	
 				System.out.println("SERVER: In running loop.");
+				System.out.println("SERVER: In try. About to enter while loop.");
+		        
+				out.println("Select the following command that you want to execute:");
+				out.println("1: create <filename>: creates an empty file named <filename>");
+		        out.println("2: delete <filename>: deletes file named <filename>");
+		    	out.println("3: read <filename>: displays the contents of <filename>");
+		    	out.println("4: append <filename> <line>: appends a <line> to <filename>");
+				out.println("5: exit: exits the program");   
 				//String result = console.nextLine();
 				//String result = inputLine;
+				System.out.println("SERVER: Printed lines to client");
 				String result = in.readLine();
 				//Note: Calling create, delete, read, and append go here:
 				File testFile = null;
+				
 				if(result.substring(0,6).equalsIgnoreCase("create"))
 				{
 					out.println("Creating File...");
