@@ -54,7 +54,7 @@ class ClientServiceThread extends Thread {
 				System.out.println("SERVER: In running loop.");
 				System.out.println("SERVER: In try. About to enter while loop.");
 		        
-				out.println("Select the following command that you want to execute:");
+				out.println("SERVER: Select the following command that you want to execute:");
 				out.println("1: create <filename>: creates an empty file named <filename>");
 		        out.println("2: delete <filename>: deletes file named <filename>");
 		    	out.println("3: read <filename>: displays the contents of <filename>");
