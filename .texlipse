@@ -1,0 +1,14 @@
+#TeXlipse project settings
+#Mon Oct 17 20:41:38 EDT 2016
+markTmpDer=true
+builderNum=0
+outputDir=Report/
+makeIndSty=
+bibrefDir=
+outputFormat=dvi
+tempDir=Report
+mainTexFile=DistributedSystemsProject1.tex
+outputFile=DistributedSystemsProject1.dvi
+langSpell=
+markDer=true
+srcDir=Report/
