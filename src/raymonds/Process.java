@@ -13,6 +13,13 @@ public class Process {
 		this.processState = Process.ProcessState.NEW ;
 	}
 	
+	public Process(String processID ) {
+		super();
+		this.processID = processID;
+		this.processState = ProcessState.NEW;
+		
+	}
+	
 	private String processID;
 	public enum HolderEnum {
 		Self,
@@ -34,13 +41,6 @@ public class Process {
 	}
 	
 	public LinkedList<Process> requestQueue = new LinkedList<Process>(); 
-
-	public Process(String processID ) {
-		super();
-		this.processID = processID;
-		this.processState = ProcessState.NEW;
-		
-	}
 
 	/**
 	 * @return the processID
