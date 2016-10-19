@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Tree {
-	private static ArrayList<Process> processes;
-	public Tree() throws IOException
+	
+	public static ArrayList<Process> CreateTree(String inputFile) throws IOException
 	{
-		processes = new ArrayList<Process>();
-		FileReader fr = new FileReader("tree.txt");
+		ArrayList<Process> processes = new ArrayList<Process>();
+		FileReader fr = new FileReader(inputFile);
 		BufferedReader br = new BufferedReader(fr);
 		String input = br.readLine();
 		boolean first = true;
@@ -47,7 +47,7 @@ public class Tree {
 					if(!processes.get(index).getNeighbors().contains(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false)))
 					{
 						processes.get(index).addNeighbor(new Process(input.substring(3, 4),Process.HolderEnum.Neighbor,false,false));
-						System.out.println("CONTAINS 1");
+						//System.out.println("CONTAINS 1");
 					}
 				}
 				found=false;
@@ -70,13 +70,14 @@ public class Tree {
 					if(!processes.get(index).getNeighbors().contains(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false)))
 					{
 						processes.get(index).addNeighbor(new Process(input.substring(1, 2),Process.HolderEnum.Neighbor,false,false));
-						System.out.println("CONTAINS 2");
+						//System.out.println("CONTAINS 2");
 					}
 				}
 			}
 			input=br.readLine();
 		}
 		br.close();	
+		return processes;
 	}
 		
 	public static void main(String[] args) throws IOException {
