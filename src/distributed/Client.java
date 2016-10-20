@@ -49,37 +49,38 @@ public class Client {
         	out.println(processID);
   /*      	oos.writeObject(clientProcess);
         	oos.flush();*/
-        	int i = 0;
-        	while(i<100){ //hack
-        		String newLine;
-        		while ( true ) {
-        			newLine = in.readLine();              
-        			if (newLine.equalsIgnoreCase("END"))
-        			{
-        				break;
-        			}
-        			System.out.println(newLine);
+
+        	String newLine;
+        	while ( true ) {
+        		newLine = in.readLine();              
+        		if (newLine.equalsIgnoreCase("END"))
+        		{
+        			break;
         		}
-        		String userInput;
-        		System.out.println("CLIENT: About to wait for user input.");
-        		/*    		System.out.println("1: create <filename>: creates an empty file named <filename>");
+        		System.out.println(newLine);
+        	}
+        	String userInput;
+        	System.out.println("CLIENT: About to wait for user input.");
+        	/*    		System.out.println("1: create <filename>: creates an empty file named <filename>");
     		System.out.println("2: delete <filename>: deletes file named <filename>");
     		System.out.println("3: read <filename>: displays the contents of <filename>");
     		System.out.println("4: append <filename> <line>: appends a <line> to <filename>");
     		System.out.println("5: exit: exits the program");
-        		 */         
-        		while ((userInput = stdIn.readLine()) != null) {
-        			out.println(userInput);
+        	 */         
+        	while ((userInput = stdIn.readLine()) != null) {
+        		System.out.println("In stdIn while loop");
+        		out.println(userInput);
+        		out.flush();
 
-        			/*while ( true ) {
+        		while ( true ) {
             		newLine = in.readLine();              
             		if (newLine.equalsIgnoreCase("END"))
             		{
             		    break;
             		}
             		System.out.println(newLine);
-            	}*/
-        			/*    			if (userInput.contains("read")){
+            	}
+        		/*    			if (userInput.contains("read")){
     				String ans = "";
     				while(in.ready())
                     {
@@ -89,9 +90,8 @@ public class Client {
                     }
                     System.out.println("CLIENT: Exited inner while loop.");
     			}*/
-        		}
         	}
-            System.out.println("CLIENT: Exited while loop.");
+            System.out.println("CLIENT: Exited stdIn while loop.");
             clientSocket.close();
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);
