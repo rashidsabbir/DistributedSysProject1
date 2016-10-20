@@ -134,7 +134,7 @@ class ClientServiceThread extends Thread {
 				{
 					for (String token : tokenMap.keySet()){
 						out.println("Token Name: \"" + token + "\"\nToken Owner: \"" + tokenOwner.get(token) + "\"\nContents: \n" + tokenMap.get(token) + "\n");
-						out.println("END");
+//						out.println("END");
 					}
 				}
 				else if(result.equals("6")) // exit shortcut
@@ -144,72 +144,72 @@ class ClientServiceThread extends Thread {
 				else if(result.substring(0,1).equalsIgnoreCase("3")) //read shortcut case
 				{
 					out.println("Reading File...");
-					out.println("END");
+//					out.println("END");
 					String fileName = result.substring(2,result.length());
 					if (tokenMap.containsKey(fileName)){
 						if (tokenOwner.get(fileName)==processID) {
 							out.println(IOFunctions.Read(tokenMap,fileName));
 							out.println("SUCCESS: Read file \"" + fileName + "\"\n");
-							out.println("END");
+//							out.println("END");
 						}
 						else {
 							out.println("ERROR: You must have token to read from file...\n");
 							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
-							out.println("END");
+//							out.println("END");
 						}
 					}
 					else {
 						out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
-						out.println("END");
+//						out.println("END");
 					}
 				}
 				else if(result.substring(0,1).equalsIgnoreCase("1")) //create shortcut case
 				{
 					out.println("Creating File...");
-					out.println("END");
+//					out.println("END");
 					String fileName = result.substring(2,result.length());
 					if (fileName.contains(" ")){
 						out.println("ERROR: Filename \"" + fileName + "\" cannot contain a space...\n");
-						out.println("END");
+//						out.println("END");
 					}
 					else if (tokenMap.containsKey(fileName)){
 						out.println("ERROR: File \"" + fileName + "\" already exists in token map...\n");
-						out.println("END");
+//						out.println("END");
 					}
 					else {
 						IOFunctions.Create(tokenMap, fileName);
 						tokenOwner.put(fileName, processID);
 						out.println("SUCCESS: Created file \"" + fileName + "\" with owner \"" + tokenOwner.get(fileName) + "\"\n");
-						out.println("END");
+//						out.println("END");
 					}
 					
 				}
 				else if(result.substring(0,1).equalsIgnoreCase("2")) // delete shortcut case
 				{
 					out.println("Deleting File...");
-					out.println("END");
+//					out.println("END");
 					String fileName = result.substring(2,result.length());
 					if (tokenMap.containsKey(fileName)){
 						if (tokenOwner.get(fileName)==processID) {
 							IOFunctions.Delete(tokenMap, fileName);
 							out.println("SUCCESS: Deleted file \"" + fileName + "\"\n");
-							out.println("END");
+//							out.println("END");
 						}
 						else {
 							out.println("ERROR: You must have token to delete a file...\n");
 							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
-							out.println("END");
+//							out.println("END");
 						}
 					}
 					else {
 						out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
-						out.println("END");
+//						out.println("END");
 					}
 				}
 				else if(result.substring(0,1).equalsIgnoreCase("4")) // append shortcut case
 				{
 					out.println("Appending to File...");
-					out.println("END");
+//					out.println("END");
 					String tmp = result.substring(2,result.length());
 					if(tmp.contains(" ")){
 						int index = tmp.indexOf(' ');
@@ -219,104 +219,104 @@ class ClientServiceThread extends Thread {
 							if(tokenOwner.get(fileName)==processID){
 								IOFunctions.Append(tokenMap, fileName,line);
 								out.println("SUCCESS: Appended line \"" + line + "\" to file \"" + fileName + "\"\n");
-								out.println("END");
+//								out.println("END");
 							}
 							else {
 								out.println("ERROR: You must have token to append to a file...\n");
 								out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
-								out.println("END");
+//								out.println("END");
 							}
 						} else {
 							out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
-							out.println("END");
+//							out.println("END");
 						}
 					} else {
 						out.println("ERROR: Must include a line to append...\n");
-						out.println("END");
+//						out.println("END");
 					}
 				}
 				else if(result.substring(0,4).equalsIgnoreCase("read")) // read case
 				{
 					out.println("Reading File...");
-					out.println("END");
+//					out.println("END");
 					String fileName = result.substring(5,result.length());
 					if (tokenMap.containsKey(fileName)){
 						if (tokenOwner.get(fileName)==processID) {
 							out.println(IOFunctions.Read(tokenMap,fileName));
 							out.println("SUCCESS: Read file \"" + fileName + "\"\n");
-							out.println("END");
+//							out.println("END");
 						}
 						else {
 							out.println("ERROR: You must have token to read from file...\n");
 							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
-							out.println("END");
+//							out.println("END");
 						}
 					}
 					else {
 						out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
-						out.println("END");
+//						out.println("END");
 					}
 				}
 				else if(result.substring(0,4).equalsIgnoreCase("list")) // list case
 				{
 					for (String token : tokenMap.keySet()){
 						out.println("Token Name: \"" + token + "\"\nToken Owner: \"" + tokenOwner.get(token) + "\"\nContents: \n" + tokenMap.get(token) + "\n");
-						out.println("END");
+//						out.println("END");
 					}
 				}
 				else if(result.substring(0,4).equalsIgnoreCase("exit")) // exit case
 				{
 					out.println("Exiting...");
-					out.println("END");
+//					out.println("END");
 					break;
 				}
 				else if(result.substring(0,6).equalsIgnoreCase("create")) // create case
 				{
 					out.println("Creating File..."); 
-					out.println("END");
+//					out.println("END");
 					String fileName = result.substring(7,result.length()); 
 					if (fileName.contains(" ")){
 						out.println("ERROR: Filename \"" + fileName + "\" cannot contain a space...\n");
-						out.println("END");
+//						out.println("END");
 					}
 					else if (tokenMap.containsKey(fileName)){
 						out.println("ERROR: File \"" + fileName + "\" already exists in token map...\n");
-						out.println("END");
+//						out.println("END");
 					}
 					else {
 						IOFunctions.Create(tokenMap, fileName);
 						tokenOwner.put(fileName, processID);
 						out.println("SUCCESS: Created file \"" + fileName + "\" with owner \"" + tokenOwner.get(fileName) + "\"\n");
-						out.println("END");
+//						out.println("END");
 					}
 					
 				}
 				else if(result.substring(0,6).equalsIgnoreCase("delete")) // delete case
 				{
 					out.println("Deleting File...");
-					out.println("END");
+//					out.println("END");
 					String fileName = result.substring(7,result.length());
 					if (tokenMap.containsKey(fileName)){
 						if (tokenOwner.get(fileName)==processID) {
 							IOFunctions.Delete(tokenMap, fileName);
 							out.println("SUCCESS: Deleted file \"" + fileName + "\"\n");
-							out.println("END");
+//							out.println("END");
 						}
 						else {
 							out.println("ERROR: You must have token to delete a file...\n");
 							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
-							out.println("END");
+//							out.println("END");
 						}
 					}
 					else {
 						out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
-						out.println("END");
+//						out.println("END");
 					}
 				}
 				else if(result.substring(0,6).equalsIgnoreCase("append")) // append case
 				{
 					out.println("Appending to File...");
-					out.println("END");
+//					out.println("END");
 					String tmp = result.substring(7,result.length());
 					if(tmp.contains(" ")){
 						int index = tmp.indexOf(' ');
@@ -326,25 +326,25 @@ class ClientServiceThread extends Thread {
 							if(tokenOwner.get(fileName)==processID){
 								IOFunctions.Append(tokenMap, fileName,line);
 								out.println("SUCCESS: Appended line \"" + line + "\" to file \"" + fileName + "\"\n");
-								out.println("END");
+//								out.println("END");
 							}
 							else {
 								out.println("ERROR: You must have token to append to a file...\n");
 								out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
-								out.println("END");
+//								out.println("END");
 							}
 						} else {
 							out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
-							out.println("END");
+//							out.println("END");
 						}
 					} else {
 						out.println("ERROR: Must include a line to append...\n");
-						out.println("END");
+//						out.println("END");
 					}
 				}
 				else {
 					out.println("ERROR: Unknown Command...\n");
-					out.println("END");
+//					out.println("END");
 				}
 			}
 			//console.close();
