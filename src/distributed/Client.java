@@ -49,7 +49,7 @@ public class Client {
         	out.println(processID);
   /*      	oos.writeObject(clientProcess);
         	oos.flush();*/
-
+        	while(true){
         	String newLine;
         	while ( true ) {
         		newLine = in.readLine();              
@@ -66,8 +66,10 @@ public class Client {
     		System.out.println("3: read <filename>: displays the contents of <filename>");
     		System.out.println("4: append <filename> <line>: appends a <line> to <filename>");
     		System.out.println("5: exit: exits the program");
-        	 */         
-        	while ((userInput = stdIn.readLine()) != null) {
+        	 */ 
+        	userInput = stdIn.readLine();
+        	out.println(userInput);
+/*        	while ((userInput = stdIn.readLine()) != null) {
         		System.out.println("In stdIn while loop");
         		out.println(userInput);
         		out.flush();
@@ -80,19 +82,10 @@ public class Client {
             		}
             		System.out.println(newLine);
             	}
-        		/*    			if (userInput.contains("read")){
-    				String ans = "";
-    				while(in.ready())
-                    {
-    					ans=in.readLine();
-                    	System.out.println("CLIENT: In inner while loop.");
-                    	System.out.println(ans);
-                    }
-                    System.out.println("CLIENT: Exited inner while loop.");
-    			}*/
+        	}*/
         	}
-            System.out.println("CLIENT: Exited stdIn while loop.");
-            clientSocket.close();
+            //System.out.println("CLIENT: Exited stdIn while loop.");
+            //clientSocket.close();
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);
             System.exit(1);
