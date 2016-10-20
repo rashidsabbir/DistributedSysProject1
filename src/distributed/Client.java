@@ -68,7 +68,14 @@ public class Client {
   */         
     		while ((userInput = stdIn.readLine()) != null) {
     			out.println(userInput);
-    			System.out.println(in.readLine());
+    			while ( true ) {
+            		newLine = in.readLine();              
+            		if (newLine.equalsIgnoreCase("END"))
+            		{
+            		    break;
+            		}
+            		System.out.println(newLine);
+            	}
     			if (userInput.contains("read")){
     				String ans = "";
     				while(in.ready())
