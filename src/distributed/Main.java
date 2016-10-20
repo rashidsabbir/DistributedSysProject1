@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 import distributed.IOFunctions;
+import distributed.MultiThread;
 import raymonds.Process;
 import raymonds.Tree;
 
@@ -21,8 +22,9 @@ public class Main {
 
 	/**
 	 * @param args
+	 * @throws Exception 
 	 */
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		// processes with neighbors derived from file
 		ArrayList<Process> processes = Tree.CreateTree("tree.txt");
 		// Print Process State
@@ -33,7 +35,9 @@ public class Main {
 		LinkedHashMap<String, String> tokenOwner = new LinkedHashMap<String,String>();
 		//Process test = new Process("testID");
 		//runIO(test, tokenMap, tokenOwner);
+		
 		for (Process p : processes) {
+//			MultiThread.runMultiThread("5556",p.getProcessID());
 			runIO(p, tokenMap, tokenOwner);
 			PrintProcessStates(processes);
 		}
