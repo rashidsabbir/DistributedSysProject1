@@ -1,6 +1,7 @@
 package distributed;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
@@ -8,6 +9,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Scanner;
 
 import distributed.Main;
 import raymonds.Process;
@@ -102,14 +104,214 @@ class ClientServiceThread extends Thread {
 				System.out.println("SERVER: In running loop.");
 				System.out.println("SERVER: In try. About to enter while loop.");
 				System.out.println("Reading Client ID");
-				String ID = in.readLine();
-				System.out.println("Accepted Client : ID - " + ID + " : Address - "
+				String clientID = in.readLine();
+				System.out.println("Accepted Client : ID - " + clientID + " : Address - "
 						+ clientSocket.getInetAddress().getHostName());
-				Main.runIO(clientProcess, tokenMap, tokenOwner);
+				
+				runSocketIO(out, clientID, tokenMap, tokenOwner);
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void runSocketIO(PrintWriter out, String processID, LinkedHashMap<String,String> tokenMap, LinkedHashMap<String,String> tokenOwner) throws IOException {
+		// TODO Auto-generated method stub
+		
+		while(true) {
+			Scanner console = new Scanner(System.in);
+			out.println("Select the following command that you want to execute:");
+			out.println("1: create <filename>: creates an empty file named <filename>");
+			out.println("2: delete <filename>: deletes file named <filename>");
+			out.println("3: read <filename>: displays the contents of <filename>");
+			out.println("4: append <filename> <line>: appends a <line> to <filename>");
+			out.println("5: list: lists token owner and contents");
+			out.println("6: exit: exit");
+			
+			if (console.hasNextLine()) {
+				String result = console.nextLine();
+				//Note: Calling create, delete, read, list, and append go here:
+				// Ordered by string length
+				if(result.equals("5")) // list shortcut
+				{
+					for (String token : tokenMap.keySet()){
+						out.println("Token Name: \"" + token + "\"\nToken Owner: \"" + tokenOwner.get(token) + "\"\nContents: \n" + tokenMap.get(token) + "\n");
+					}
+				}
+				else if(result.equals("6")) // exit shortcut
+				{
+					break;
+				}
+				else if(result.substring(0,1).equalsIgnoreCase("3")) //read shortcut case
+				{
+					out.println("Reading File...");
+					String fileName = result.substring(2,result.length());
+					if (tokenMap.containsKey(fileName)){
+						if (tokenOwner.get(fileName)==processID) {
+							out.println(IOFunctions.Read(tokenMap,fileName));
+							out.println("SUCCESS: Read file \"" + fileName + "\"\n");
+						}
+						else {
+							out.println("ERROR: You must have token to read from file...\n");
+							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+						}
+					}
+					else {
+						out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
+					}
+				}
+				else if(result.substring(0,1).equalsIgnoreCase("1")) //create shortcut case
+				{
+					out.println("Creating File...");
+					String fileName = result.substring(2,result.length());
+					if (fileName.contains(" ")){
+						out.println("ERROR: Filename \"" + fileName + "\" cannot contain a space...\n");
+					}
+					else if (tokenMap.containsKey(fileName)){
+						out.println("ERROR: File \"" + fileName + "\" already exists in token map...\n");
+					}
+					else {
+						IOFunctions.Create(tokenMap, fileName);
+						tokenOwner.put(fileName, processID);
+						out.println("SUCCESS: Created file \"" + fileName + "\" with owner \"" + tokenOwner.get(fileName) + "\"\n");
+					}
+					
+				}
+				else if(result.substring(0,1).equalsIgnoreCase("2")) // delete shortcut case
+				{
+					out.println("Deleting File...");
+					String fileName = result.substring(2,result.length());
+					if (tokenMap.containsKey(fileName)){
+						if (tokenOwner.get(fileName)==processID) {
+							IOFunctions.Delete(tokenMap, fileName);
+							out.println("SUCCESS: Deleted file \"" + fileName + "\"\n");
+						}
+						else {
+							out.println("ERROR: You must have token to delete a file...\n");
+							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+						}
+					}
+					else {
+						out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
+					}
+				}
+				else if(result.substring(0,1).equalsIgnoreCase("4")) // append shortcut case
+				{
+					out.println("Appending to File...");
+					String tmp = result.substring(2,result.length());
+					if(tmp.contains(" ")){
+						int index = tmp.indexOf(' ');
+						String fileName = tmp.substring(0,index);
+						String line = tmp.substring(index+1,tmp.length());
+						if (tokenMap.containsKey(fileName)){
+							if(tokenOwner.get(fileName)==processID){
+								IOFunctions.Append(tokenMap, fileName,line);
+								out.println("SUCCESS: Appended line \"" + line + "\" to file \"" + fileName + "\"\n");
+							}
+							else {
+								out.println("ERROR: You must have token to append to a file...\n");
+								out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+							}
+						} else {
+							out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
+						}
+					} else {
+						out.println("ERROR: Must include a line to append...\n");
+					}
+				}
+				else if(result.substring(0,4).equalsIgnoreCase("read")) // read case
+				{
+					out.println("Reading File...");
+					String fileName = result.substring(5,result.length());
+					if (tokenMap.containsKey(fileName)){
+						if (tokenOwner.get(fileName)==processID) {
+							out.println(IOFunctions.Read(tokenMap,fileName));
+							out.println("SUCCESS: Read file \"" + fileName + "\"\n");
+						}
+						else {
+							out.println("ERROR: You must have token to read from file...\n");
+							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+						}
+					}
+					else {
+						out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
+					}
+				}
+				else if(result.substring(0,4).equalsIgnoreCase("list")) // list case
+				{
+					for (String token : tokenMap.keySet()){
+						out.println("Token Name: \"" + token + "\"\nToken Owner: \"" + tokenOwner.get(token) + "\"\nContents: \n" + tokenMap.get(token) + "\n");
+					}
+				}
+				else if(result.substring(0,4).equalsIgnoreCase("exit")) // exit case
+				{
+					break;
+				}
+				else if(result.substring(0,6).equalsIgnoreCase("create")) // create case
+				{
+					out.println("Creating File..."); 
+					String fileName = result.substring(7,result.length()); 
+					if (fileName.contains(" ")){
+						out.println("ERROR: Filename \"" + fileName + "\" cannot contain a space...\n");
+					}
+					else if (tokenMap.containsKey(fileName)){
+						out.println("ERROR: File \"" + fileName + "\" already exists in token map...\n");
+					}
+					else {
+						IOFunctions.Create(tokenMap, fileName);
+						tokenOwner.put(fileName, processID);
+						out.println("SUCCESS: Created file \"" + fileName + "\" with owner \"" + tokenOwner.get(fileName) + "\"\n");
+					}
+					
+				}
+				else if(result.substring(0,6).equalsIgnoreCase("delete")) // delete case
+				{
+					out.println("Deleting File...");
+					String fileName = result.substring(7,result.length());
+					if (tokenMap.containsKey(fileName)){
+						if (tokenOwner.get(fileName)==processID) {
+							IOFunctions.Delete(tokenMap, fileName);
+							out.println("SUCCESS: Deleted file \"" + fileName + "\"\n");
+						}
+						else {
+							out.println("ERROR: You must have token to delete a file...\n");
+							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+						}
+					}
+					else {
+						out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
+					}
+				}
+				else if(result.substring(0,6).equalsIgnoreCase("append")) // append case
+				{
+					out.println("Appending to File...");
+					String tmp = result.substring(7,result.length());
+					if(tmp.contains(" ")){
+						int index = tmp.indexOf(' ');
+						String fileName = tmp.substring(0,index);
+						String line = tmp.substring(index+1,tmp.length());
+						if (tokenMap.containsKey(fileName)){
+							if(tokenOwner.get(fileName)==processID){
+								IOFunctions.Append(tokenMap, fileName,line);
+								out.println("SUCCESS: Appended line \"" + line + "\" to file \"" + fileName + "\"\n");
+							}
+							else {
+								out.println("ERROR: You must have token to append to a file...\n");
+								out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+							}
+						} else {
+							out.println("ERROR: File \"" + fileName + "\" does not exist in token map...\n");
+						}
+					} else {
+						out.println("ERROR: Must include a line to append...\n");
+					}
+				}
+				else 
+					out.println("ERROR: Unknown Command...\n");
+			}
+			//console.close();
+		}
+
 	}
 }
