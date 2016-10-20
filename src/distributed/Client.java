@@ -37,7 +37,7 @@ public class Client {
                     new InputStreamReader(System.in));
 //        	System.out.println("CLIENT: Initiated print buffered reader stdIn.");
         	){
-        	String processID=args[0];
+        	String processID=args[2];
         	Process clientProcess = new Process();
         	ArrayList<Process> processes = Tree.CreateTree("tree.txt");
 			for (Process p : processes) {
