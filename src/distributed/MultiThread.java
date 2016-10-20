@@ -128,7 +128,7 @@ class ClientServiceThread extends Thread {
 			out.println("4: append <filename> <line>: appends a <line> to <filename>");
 			out.println("5: list: lists token owner and contents");
 			out.println("6: exit: exit");
-			
+			out.println("END");
 			if (console.hasNextLine()) {
 				String result = console.nextLine();
 				//Note: Calling create, delete, read, list, and append go here:

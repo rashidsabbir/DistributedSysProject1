@@ -49,8 +49,14 @@ public class Client {
         	out.println(processID);
   /*      	oos.writeObject(clientProcess);
         	oos.flush();*/
-        	while(in.ready()) {
-        		System.out.println(in.readLine());
+        	String newLine;
+        	while ( true ) {
+        		newLine = in.readLine();              
+        		if (newLine.equalsIgnoreCase("END"))
+        		{
+        		    break;
+        		}
+        		System.out.println(newLine);
         	}
         	String userInput;
         	System.out.println("CLIENT: About to wait for user input.");
