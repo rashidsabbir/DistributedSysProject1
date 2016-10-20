@@ -49,7 +49,9 @@ public class Client {
         	out.println(processID);
   /*      	oos.writeObject(clientProcess);
         	oos.flush();*/
-        	
+        	while(in.ready()) {
+        		System.out.println(in.readLine());
+        	}
         	String userInput;
         	System.out.println("CLIENT: About to wait for user input.");
         	System.out.println("Client: Select the following command that you want to execute:");
