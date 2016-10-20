@@ -76,7 +76,7 @@ class ClientServiceThread extends Thread {
 	ClientServiceThread(Socket s, int i) {
 		clientSocket = s;
 		clientID = i;
-		try {
+/*		try {
 			ArrayList<Process> processes = Tree.CreateTree("tree.txt");
 			for (Process p : processes) {
 				if (clientID == Integer.parseInt(p.getProcessID())){
@@ -86,11 +86,12 @@ class ClientServiceThread extends Thread {
 			} catch (Exception e){
 				System.out.println("Error: " + e);
 			}
+			*/
 	}
 
 	public void run() {
-		System.out.println("Accepted Client : ID - " + clientID + " : Address - "
-				+ clientSocket.getInetAddress().getHostName());
+		//System.out.println("Accepted Client : ID - " + clientID + " : Address - "
+		//		+ clientSocket.getInetAddress().getHostName());
 		try {
 			BufferedReader   in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 			System.out.println("SERVER: Created buffered reader in.");

@@ -2,14 +2,18 @@ package distributed;
 
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+
+import raymonds.Process;
+import raymonds.Tree;
 
 
 public class Client {
 	public static void main(String[] args) throws IOException {
         
-        if (args.length != 2) {
+        if (args.length != 3) {
             System.err.println(
-                "Usage: java Client <host name> <port number>");
+                "Usage: java Client <host name> <port number> <process id>");
             System.exit(1);
         }
  
@@ -22,6 +26,8 @@ public class Client {
         	PrintWriter out =
                 new PrintWriter(clientSocket.getOutputStream(), true);
 //        	System.out.println("CLIENT: Initiated print writer output stream.");
+/*        	ObjectOutputStream oos = 
+        		new ObjectOutputStream(clientSocket.getOutputStream());*/
         	BufferedReader in =
                 new BufferedReader(
                     new InputStreamReader(clientSocket.getInputStream()));
@@ -31,8 +37,18 @@ public class Client {
                     new InputStreamReader(System.in));
 //        	System.out.println("CLIENT: Initiated print buffered reader stdIn.");
         	){
-        	String processID="5";
+        	String processID=args[0];
+        	Process clientProcess = new Process();
+        	ArrayList<Process> processes = Tree.CreateTree("tree.txt");
+			for (Process p : processes) {
+				if (processID == p.getProcessID()){
+					clientProcess = p;
+				}
+			}
+        	
         	out.println(processID);
+  /*      	oos.writeObject(clientProcess);
+        	oos.flush();*/
         	
         	String userInput;
         	System.out.println("CLIENT: About to wait for user input.");
