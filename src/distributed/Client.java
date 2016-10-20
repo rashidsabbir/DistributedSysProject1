@@ -60,7 +60,6 @@ public class Client {
         	}
         	String userInput;
         	System.out.println("CLIENT: About to wait for user input.");
-        	System.out.println("Client: Select the following command that you want to execute:");
 /*    		System.out.println("1: create <filename>: creates an empty file named <filename>");
     		System.out.println("2: delete <filename>: deletes file named <filename>");
     		System.out.println("3: read <filename>: displays the contents of <filename>");

@@ -108,7 +108,7 @@ class ClientServiceThread extends Thread {
 				System.out.println("Accepted Client : ID - " + clientID + " : Address - "
 						+ clientSocket.getInetAddress().getHostName());
 				
-				runSocketIO(out, clientID, tokenMap, tokenOwner);
+				runSocketIO(out, in, clientID, tokenMap, tokenOwner);
 
 			}
 		} catch (Exception e) {
@@ -116,12 +116,11 @@ class ClientServiceThread extends Thread {
 		}
 	}
 	
-	public static void runSocketIO(PrintWriter out, String processID, LinkedHashMap<String,String> tokenMap, LinkedHashMap<String,String> tokenOwner) throws IOException {
+	public static void runSocketIO(PrintWriter out, BufferedReader in, String processID, LinkedHashMap<String,String> tokenMap, LinkedHashMap<String,String> tokenOwner) throws IOException {
 		// TODO Auto-generated method stub
 		
 		while(true) {
-			Scanner console = new Scanner(System.in);
-			out.println("Select the following command that you want to execute:");
+			out.println("SERVER: Select the following command that you want to execute:");
 			out.println("1: create <filename>: creates an empty file named <filename>");
 			out.println("2: delete <filename>: deletes file named <filename>");
 			out.println("3: read <filename>: displays the contents of <filename>");
@@ -129,8 +128,8 @@ class ClientServiceThread extends Thread {
 			out.println("5: list: lists token owner and contents");
 			out.println("6: exit: exit");
 			out.println("END");
-			if (console.hasNextLine()) {
-				String result = console.nextLine();
+			if (in.ready()) {
+				String result = in.readLine();
 				//Note: Calling create, delete, read, list, and append go here:
 				// Ordered by string length
 				if(result.equals("5")) // list shortcut
