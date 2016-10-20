@@ -67,10 +67,6 @@ public class MultiThread {
 class ClientServiceThread extends Thread {
 	Socket clientSocket;
 	
-	LinkedHashMap<String,String> tokenMap;
-	LinkedHashMap<String,String> tokenOwner;
-	Process clientProcess = new Process();
-	
 	int clientID = -1;
 	boolean running = true;
 	
@@ -99,7 +95,9 @@ class ClientServiceThread extends Thread {
 			System.out.println("SERVER: Created buffered reader in.");
 			PrintWriter   out = new PrintWriter(new OutputStreamWriter(clientSocket.getOutputStream()),true);
 			System.out.println("SERVER: Created print writer out.");
-            
+			LinkedHashMap<String,String> tokenMap = new LinkedHashMap<String,String>();
+			LinkedHashMap<String,String> tokenOwner = new LinkedHashMap<String,String>();
+			
 			while (running) {	
 				System.out.println("SERVER: In running loop.");
 				System.out.println("SERVER: In try. About to enter while loop.");
