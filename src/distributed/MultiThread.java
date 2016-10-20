@@ -16,13 +16,13 @@ import raymonds.Tree;
 public class MultiThread {
 	
 	public static void main(String[] args) throws Exception {
-		if (args.length != 2) {
-			System.err.println("Usage: java MultiThread <port number> <process id>");
+		if (args.length != 1) {
+			System.err.println("Usage: java MultiThread <port number>");
 			System.exit(1);
 		}
 		System.out.println("Running MultiThread...");
 		int portNumber = Integer.parseInt(args[0]);
-		int clientID = Integer.parseInt(args[1]);
+		int clientID = 1;
 		
 		@SuppressWarnings("resource")
 		ServerSocket m_ServerSocket = new ServerSocket(portNumber);
@@ -100,7 +100,10 @@ class ClientServiceThread extends Thread {
 			while (running) {	
 				System.out.println("SERVER: In running loop.");
 				System.out.println("SERVER: In try. About to enter while loop.");
-				
+				System.out.println("Reading Client ID");
+				String ID = in.readLine();
+				System.out.println("Accepted Client : ID - " + ID + " : Address - "
+						+ clientSocket.getInetAddress().getHostName());
 				Main.runIO(clientProcess, tokenMap, tokenOwner);
 
 			}
