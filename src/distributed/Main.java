@@ -37,7 +37,7 @@ public class Main {
 		//runIO(test, tokenMap, tokenOwner);
 		
 		for (Process p : processes) {
-//			MultiThread.runMultiThread("5556",p.getProcessID());
+			MultiThread.runMultiThread("5556",p.getProcessID());
 			runIO(p, tokenMap, tokenOwner);
 			PrintProcessStates(processes);
 		}

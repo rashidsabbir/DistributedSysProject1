@@ -6,24 +6,27 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 import distributed.Main;
 import raymonds.Process;
+import raymonds.Tree;
 
 public class MultiThread {
+	
 	public static void main(String[] args) throws Exception {
 		if (args.length != 2) {
 			System.err.println("Usage: java MultiThread <port number> <process id>");
 			System.exit(1);
 		}
-
+		System.out.println("Running MultiThread...");
 		int portNumber = Integer.parseInt(args[0]);
 		int clientID = Integer.parseInt(args[1]);
 		
 		@SuppressWarnings("resource")
 		ServerSocket m_ServerSocket = new ServerSocket(portNumber);
-		
+		System.out.println("About to enter Wait For Client Loop...");
 		while (true) {
 			Socket clientSocket = m_ServerSocket.accept();
 			ClientServiceThread cliThread = new ClientServiceThread(clientSocket, clientID);
@@ -61,15 +64,31 @@ public class MultiThread {
 
 class ClientServiceThread extends Thread {
 	Socket clientSocket;
+	
+	LinkedHashMap<String,String> tokenMap;
+	LinkedHashMap<String,String> tokenOwner;
+	Process clientProcess = new Process();
+	
 	int clientID = -1;
 	boolean running = true;
+	
 
 	ClientServiceThread(Socket s, int i) {
 		clientSocket = s;
 		clientID = i;
+		try {
+			ArrayList<Process> processes = Tree.CreateTree("tree.txt");
+			for (Process p : processes) {
+				if (clientID == Integer.parseInt(p.getProcessID())){
+					clientProcess = p;
+				}
+			}
+			} catch (Exception e){
+				System.out.println("Error: " + e);
+			}
 	}
 
-	public void run(Process p, LinkedHashMap<String,String> tokenMap, LinkedHashMap<String,String> tokenOwner) {
+	public void run() {
 		System.out.println("Accepted Client : ID - " + clientID + " : Address - "
 				+ clientSocket.getInetAddress().getHostName());
 		try {
@@ -82,8 +101,7 @@ class ClientServiceThread extends Thread {
 				System.out.println("SERVER: In running loop.");
 				System.out.println("SERVER: In try. About to enter while loop.");
 				
-				
-				Main.runIO(p, tokenMap, tokenOwner);
+				Main.runIO(clientProcess, tokenMap, tokenOwner);
 
 			}
 		} catch (Exception e) {

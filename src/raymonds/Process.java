@@ -20,6 +20,10 @@ public class Process {
 		
 	}
 	
+	public Process() {
+		// TODO Auto-generated constructor stub
+	}
+
 	private String processID;
 	public enum HolderEnum {
 		Self,
