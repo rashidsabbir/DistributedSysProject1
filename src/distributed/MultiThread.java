@@ -128,7 +128,7 @@ class ClientServiceThread extends Thread {
 			out.println("5: list: lists token owner and contents");
 			out.println("6: exit: exit");
 			out.println("END");
-			if (in.ready()) {
+			if (true) {
 				String result = in.readLine();
 				//Note: Calling create, delete, read, list, and append go here:
 				// Ordered by string length
