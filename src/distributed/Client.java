@@ -76,7 +76,7 @@ public class Client {
             		}
             		System.out.println(newLine);
             	}
-    			if (userInput.contains("read")){
+/*    			if (userInput.contains("read")){
     				String ans = "";
     				while(in.ready())
                     {
@@ -85,7 +85,7 @@ public class Client {
                     	System.out.println(ans);
                     }
                     System.out.println("CLIENT: Exited inner while loop.");
-    			}
+    			}*/
     		}
             System.out.println("CLIENT: Exited while loop.");
             clientSocket.close();
