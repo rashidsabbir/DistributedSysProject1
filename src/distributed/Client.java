@@ -79,6 +79,7 @@ public class Client {
         			for (Process n : clientProcess.neighbors){
         				Raymonds.requestResource(clientProcess, n);
         			}
+        			break;
         		}
         		else if (newLine.equalsIgnoreCase("END"))
         		{

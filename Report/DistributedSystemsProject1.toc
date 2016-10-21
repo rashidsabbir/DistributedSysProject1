@@ -1,18 +1,16 @@
 \contentsline {section}{\numberline {I}Introduction}{2}{section.1}
 \contentsline {subsection}{\numberline {I.I}Problem Statement}{2}{subsection.1.1}
 \contentsline {section}{\numberline {II}Methodology}{2}{section.2}
-\contentsline {subsection}{\numberline {II.I}Tree Implementation}{3}{subsection.2.1}
-\contentsline {subsection}{\numberline {II.II}Raymond's Functions}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {II.I}Tree Implementation}{2}{subsection.2.1}
+\contentsline {subsection}{\numberline {II.II}Raymond's Functions}{4}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {II.II.i}assignToken(Process p)}{5}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {II.II.ii}sendRequest(Process p)}{6}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {II.II.iii}requestResource(Process p)}{6}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {II.II.ii}sendRequest(Process p)}{5}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {II.II.iii}requestResource(Process p)}{5}{subsubsection.2.2.3}
 \contentsline {subsubsection}{\numberline {II.II.iv}releaseResource(Process p)}{6}{subsubsection.2.2.4}
 \contentsline {subsubsection}{\numberline {II.II.v}receivedRequestFromNeighbor(Process p, Process neighbor)}{6}{subsubsection.2.2.5}
 \contentsline {subsubsection}{\numberline {II.II.vi}receivedToken(Process p)}{6}{subsubsection.2.2.6}
-\contentsline {subsection}{\numberline {II.III}Client Implementation}{7}{subsection.2.3}
-\contentsline {subsection}{\numberline {II.IV}Single Threaded Server}{8}{subsection.2.4}
-\contentsline {subsection}{\numberline {II.V}Multithreaded Server}{10}{subsection.2.5}
-\contentsline {subsection}{\numberline {II.VI}Main}{12}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {II.VI.i}Create Tree Structure}{12}{subsubsection.2.6.1}
-\contentsline {subsubsection}{\numberline {II.VI.ii}Read, Create, Append \& Delete}{15}{subsubsection.2.6.2}
-\contentsline {section}{\numberline {III}Conclusions}{15}{section.3}
+\contentsline {subsection}{\numberline {II.III}Client Implementation}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {II.IV}Single Threaded Server}{9}{subsection.2.4}
+\contentsline {subsection}{\numberline {II.V}Multithreaded Server}{11}{subsection.2.5}
+\contentsline {subsection}{\numberline {II.VI}Main}{21}{subsection.2.6}
+\contentsline {section}{\numberline {III}Conclusions}{28}{section.3}
