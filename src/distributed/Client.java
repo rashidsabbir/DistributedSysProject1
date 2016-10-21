@@ -9,6 +9,8 @@ import raymonds.Tree;
 
 
 public class Client {
+	public static Process clientProcess = new Process();
+	
 	public static void main(String[] args) throws IOException {
         
         if (args.length != 3) {
@@ -19,6 +21,26 @@ public class Client {
  
         String hostName = args[0];
         int portNumber = Integer.parseInt(args[1]);
+        String clientID=args[2];
+        try {
+			boolean found = false;
+			ArrayList<Process> processes = Tree.CreateTree("tree.txt");
+			for (Process p : processes) {
+				//System.out.println(p.getProcessID());
+				if (Integer.parseInt(clientID) == Integer.parseInt(p.getProcessID())){
+					found = true;
+					System.out.println("Found the Server Process in the tree...");
+					clientProcess = p;
+				}
+			}
+			if (!found){
+				System.err.println("Error: Client Process " + clientID + " entered does not exist in tree");
+				System.exit(1);
+			}
+		} catch (Exception e){
+			System.err.println("Error: " + e);
+		}
+        
         System.out.println("CLIENT: About to try to create Client Socket");
         try (
             Socket clientSocket = new Socket(hostName, portNumber);
@@ -37,7 +59,7 @@ public class Client {
                     new InputStreamReader(System.in));
 //        	System.out.println("CLIENT: Initiated print buffered reader stdIn.");
         	){
-        	String processID=args[2];
+        	
 /*        	Process clientProcess = new Process();
         	ArrayList<Process> processes = Tree.CreateTree("tree.txt");
 			for (Process p : processes) {
@@ -46,14 +68,17 @@ public class Client {
 				}
 			}
   */      	
-        	out.println(processID);
+        	out.println(clientID);
   /*      	oos.writeObject(clientProcess);
         	oos.flush();*/
         	while(true){
         	String newLine;
         	while ( true ) {
-        		newLine = in.readLine();              
-        		if (newLine.equalsIgnoreCase("END"))
+        		newLine = in.readLine();
+        		if (newLine.equalsIgnoreCase("ACQUIRETOKEN")){
+        			
+        		}
+        		else if (newLine.equalsIgnoreCase("END"))
         		{
         			break;
         		}

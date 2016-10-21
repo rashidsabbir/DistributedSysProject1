@@ -69,6 +69,7 @@ public class MultiThread {
 			cliThread.start();
 		}
 	}
+	
 	public static void runMultiThread(String port, String clientID) throws Exception {
 		System.out.println("Running MultiThread...");
 		int portNumber = Integer.parseInt(port);
@@ -187,6 +188,7 @@ class ClientServiceThread extends Thread {
 						else {
 							out.println("ERROR: You must have token to read from file...\n");
 							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+							out.println("ACQUIRETOKEN");
 //							out.println("END");
 						}
 					}
