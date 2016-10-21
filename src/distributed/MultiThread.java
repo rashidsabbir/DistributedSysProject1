@@ -137,6 +137,7 @@ class ClientServiceThread extends Thread {
 				} 
 				else {
 					System.out.println("Client : ID - " + clientID + " : is not a neighbor of Server : ID - " + MultiThread.serverProcess.getProcessID() );
+					clientSocket.close();
 				}
 
 			}
