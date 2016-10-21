@@ -30,9 +30,10 @@ public class MultiThread {
 			boolean found = false;
 			ArrayList<Process> processes = Tree.CreateTree("tree.txt");
 			for (Process p : processes) {
-				System.out.println(p.getProcessID());
+				//System.out.println(p.getProcessID());
 				if (serverID == p.getProcessID()){
 					found = true;
+					System.out.println("Found the Server Process in the tree...");
 					serverProcess = p;
 				}
 			}
