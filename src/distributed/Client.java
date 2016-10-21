@@ -13,7 +13,7 @@ public class Client {
         
         if (args.length != 3) {
             System.err.println(
-                "Usage: java Client <host name> <port number> <process id>");
+                "Usage: java Client <host name> <port number> <client process id>");
             System.exit(1);
         }
  

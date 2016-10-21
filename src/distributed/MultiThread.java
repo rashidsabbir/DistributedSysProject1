@@ -16,14 +16,32 @@ import raymonds.Process;
 import raymonds.Tree;
 
 public class MultiThread {
-	
+	public static Process serverProcess = new Process();
 	public static void main(String[] args) throws Exception {
-		if (args.length != 1) {
-			System.err.println("Usage: java MultiThread <port number>");
+		if (args.length != 2) {
+			System.err.println("Usage: java MultiThread <port number> <server process id>");
 			System.exit(1);
 		}
 		System.out.println("Running MultiThread...");
 		int portNumber = Integer.parseInt(args[0]);
+		String serverID = args[1];
+		
+		try {
+			boolean found = false;
+			ArrayList<Process> processes = Tree.CreateTree("tree.txt");
+			for (Process p : processes) {
+				if (serverID == p.getProcessID()){
+					serverProcess = p;
+					found = true;
+				}
+			}
+			if (!found){
+				System.err.println("Error: Server Process entered does not exist in tree");
+				System.exit(1);
+			}
+		} catch (Exception e){
+			System.err.println("Error: " + e);
+		}		
 		int clientID = 1;
 		
 		@SuppressWarnings("resource")
@@ -103,10 +121,20 @@ class ClientServiceThread extends Thread {
 				System.out.println("SERVER: In try. About to enter while loop.");
 				System.out.println("Reading Client ID");
 				String clientID = in.readLine();
+				boolean found = false;
+				for (Process p : MultiThread.serverProcess.getNeighbors()){
+					if (clientID == p.getProcessID()){
+						found = true;
+					}
+				}
+				if (found){
 				System.out.println("Accepted Client : ID - " + clientID + " : Address - "
 						+ clientSocket.getInetAddress().getHostName());
-				
 				runSocketIO(out, in, clientID, tokenMap, tokenOwner);
+				} 
+				else {
+					System.out.println("Client : ID - " + clientID + " : is not a neighbor of Server : ID - " + MultiThread.serverProcess.getProcessID() );
+				}
 
 			}
 		} catch (Exception e) {
