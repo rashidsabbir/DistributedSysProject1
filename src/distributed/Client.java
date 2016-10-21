@@ -29,7 +29,7 @@ public class Client {
 				//System.out.println(p.getProcessID());
 				if (Integer.parseInt(clientID) == Integer.parseInt(p.getProcessID())){
 					found = true;
-					System.out.println("Found the Server Process in the tree...");
+					System.out.println("Found the Client Process in the tree...");
 					clientProcess = p;
 				}
 			}
@@ -76,7 +76,9 @@ public class Client {
         	while ( true ) {
         		newLine = in.readLine();
         		if (newLine.equalsIgnoreCase("ACQUIRETOKEN")){
-        			
+        			for (Process n : clientProcess.neighbors){
+        				Raymonds.requestResource(clientProcess, n);
+        			}
         		}
         		else if (newLine.equalsIgnoreCase("END"))
         		{

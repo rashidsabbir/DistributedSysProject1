@@ -232,6 +232,7 @@ class ClientServiceThread extends Thread {
 						else {
 							out.println("ERROR: You must have token to delete a file...\n");
 							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+							out.println("ACQUIRETOKEN");
 //							out.println("END");
 						}
 					}
@@ -258,6 +259,7 @@ class ClientServiceThread extends Thread {
 							else {
 								out.println("ERROR: You must have token to append to a file...\n");
 								out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+								out.println("ACQUIRETOKEN");
 //								out.println("END");
 							}
 						} else {
@@ -283,6 +285,7 @@ class ClientServiceThread extends Thread {
 						else {
 							out.println("ERROR: You must have token to read from file...\n");
 							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+							out.println("ACQUIRETOKEN");
 //							out.println("END");
 						}
 					}
@@ -339,6 +342,7 @@ class ClientServiceThread extends Thread {
 						else {
 							out.println("ERROR: You must have token to delete a file...\n");
 							out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+							out.println("ACQUIRETOKEN");
 //							out.println("END");
 						}
 					}
@@ -365,6 +369,7 @@ class ClientServiceThread extends Thread {
 							else {
 								out.println("ERROR: You must have token to append to a file...\n");
 								out.println("The current token owner for file \"" + fileName + "\" is \"" + tokenOwner.get(fileName) + "\"...\n");
+								out.println("ACQUIRETOKEN");
 //								out.println("END");
 							}
 						} else {
