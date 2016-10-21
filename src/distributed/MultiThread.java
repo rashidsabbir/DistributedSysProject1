@@ -31,7 +31,7 @@ public class MultiThread {
 			ArrayList<Process> processes = Tree.CreateTree("tree.txt");
 			for (Process p : processes) {
 				//System.out.println(p.getProcessID());
-				if (serverID == p.getProcessID()){
+				if (Integer.parseInt(serverID) == Integer.parseInt(p.getProcessID())){
 					found = true;
 					System.out.println("Found the Server Process in the tree...");
 					serverProcess = p;
@@ -125,7 +125,8 @@ class ClientServiceThread extends Thread {
 				String clientID = in.readLine();
 				boolean found = false;
 				for (Process p : MultiThread.serverProcess.getNeighbors()){
-					if (clientID == p.getProcessID()){
+					if (Integer.parseInt(clientID) == Integer.parseInt(p.getProcessID())){
+						System.out.println("Found the client in the list of Neighbors...");
 						found = true;
 					}
 				}
