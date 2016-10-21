@@ -17,6 +17,9 @@ import raymonds.Tree;
 
 public class MultiThread {
 	public static Process serverProcess = new Process();
+	public static LinkedHashMap<String,String> tokenMap = new LinkedHashMap<String,String>();
+	public static LinkedHashMap<String,String> tokenOwner = new LinkedHashMap<String,String>();
+	
 	public static void main(String[] args) throws Exception {
 		if (args.length != 2) {
 			System.err.println("Usage: java MultiThread <port number> <server process id>");
@@ -116,8 +119,6 @@ class ClientServiceThread extends Thread {
 			System.out.println("SERVER: Created buffered reader in.");
 			PrintWriter   out = new PrintWriter(new OutputStreamWriter(clientSocket.getOutputStream()),true);
 			System.out.println("SERVER: Created print writer out.");
-			LinkedHashMap<String,String> tokenMap = new LinkedHashMap<String,String>();
-			LinkedHashMap<String,String> tokenOwner = new LinkedHashMap<String,String>();
 			
 			while (running) {	
 				System.out.println("SERVER: In running loop.");
@@ -134,10 +135,10 @@ class ClientServiceThread extends Thread {
 				if (found){
 				System.out.println("Accepted Client : ID - " + clientID + " : Address - "
 						+ clientSocket.getInetAddress().getHostName());
-				runSocketIO(out, in, clientID, tokenMap, tokenOwner);
+				runSocketIO(out, in, clientID, MultiThread.tokenMap, MultiThread.tokenOwner);
 				} 
 				else {
-					System.out.println("Client : ID - " + clientID + " : is not a neighbor of Server : ID - " + MultiThread.serverProcess.getProcessID() );
+					System.out.println("Client : " + clientID + " : is not a neighbor of Server : " + MultiThread.serverProcess.getProcessID() + ":" );
 					clientSocket.close();
 				}
 
