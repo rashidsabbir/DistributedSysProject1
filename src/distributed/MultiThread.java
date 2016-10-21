@@ -36,7 +36,7 @@ public class MultiThread {
 				}
 			}
 			if (!found){
-				System.err.println("Error: Server Process entered does not exist in tree");
+				System.err.println("Error: Server Process " + serverID + " entered does not exist in tree");
 				System.exit(1);
 			}
 		} catch (Exception e){
